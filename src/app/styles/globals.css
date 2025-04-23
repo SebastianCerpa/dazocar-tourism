@@ -1,0 +1,360 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background-image: url("/images/chile-landscape.jpg"); /* Home page hero image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.about-hero {
+  height: 50vh;
+  background-image: url("/images/about-hero.jpg");
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Changed to bottom shadow only */
+  text-align: center;
+}
+.hero-content {
+  align-items: center;
+  text-align: center;
+  max-width: 800px; /* Limit width for better readability */
+  padding: 1rem;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: #ffffff; /* White */
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Subtle shadow for modern look */
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #cccccc; /* Light grey for subtitle */
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #333333; /* Dark grey */
+  color: #ffffff; /* White */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background-color: #666666; /* Medium grey on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 50vh; /* Shorter on mobile */
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+.navbar {
+  background-color: #222;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between; /* This is already correct */
+  align-items: center;
+  width: 100%; /* Ensure navbar spans full width */
+}
+
+.logo {
+  margin-right: auto; /* Pushes logo to the left */
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  flex-direction: row; /* Ensures horizontal alignment */
+}
+
+.navLinks li a {
+  text-decoration: none;
+  color: #ddd; /* Lighter grey for links */
+  transition: color 0.3s ease;
+}
+
+.navLinks li a:hover {
+  color: #fff;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto; /* Hace que el contenido principal ocupe el espacio disponible */
+}
+
+.footer {
+  background-color: #333;
+  color: #eee;
+  padding: 1rem 2rem;
+  text-align: center;
+  flex-shrink: 0; /* Evita que el footer se encoja */
+  margin-top: 2rem; /* Add some space above the footer */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.featured-destinations {
+  padding: 4rem 0;
+}
+
+.destination-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.destination-card {
+  flex: 1;
+  min-width: 250px;
+  max-width: calc(25% - 1.5rem);
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.feature {
+  flex: 1;
+  min-width: 250px;
+  max-width: calc(33.333% - 1.5rem);
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 2.5rem;
+}
+
+.why-choose-us {
+  padding: 4rem 0;
+  background: #f9f9f9;
+  margin-top: 2rem;
+}
+.about-section {
+  padding: 0 0 0 0; /* Changed from padding: 4rem 0 to remove top padding */
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mission-vision,
+.company-story,
+.values-section,
+.team-section {
+  margin-bottom: 4rem;
+}
+
+.values-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.value-card {
+  flex: 1;
+  min-width: 250px;
+  max-width: calc(33.333% - 1.5rem);
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.about-content h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.about-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    padding: 0 1.5rem;
+  }
+
+  .value-card {
+    max-width: 100%;
+  }
+}
+
+.home-about {
+  padding: 5rem 0;
+  background: #fff;
+}
+
+.about-wrapper {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.about-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.learn-more-btn,
+.contact-btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.learn-more-btn {
+  background: #333;
+  color: white;
+}
+
+.learn-more-btn:hover {
+  background: #444;
+  transform: translateY(-2px);
+}
+
+.contact-btn {
+  background: transparent;
+  color: #333;
+  border: 2px solid #333;
+}
+
+.contact-btn:hover {
+  background: #333;
+  color: white;
+  transform: translateY(-2px);
+}
+.learn-more-btn:hover {
+  background: #555;
+}
+
+.about-stats {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.stat-item {
+  text-align: center;
+  min-width: 150px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .about-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-stats {
+    width: 100%;
+  }
+}
