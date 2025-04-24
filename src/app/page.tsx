@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import { AnimatedSection } from "./components/AnimatedSection";
+import CarouselComponent from './components/CarouselComponent';
 
 export default function Home() {
   return (
@@ -65,24 +66,34 @@ export default function Home() {
         <div className="container">
           <AnimatedSection className="featured-destinations">
             <h2>Popular Destinations</h2>
-            <div className="destination-grid">
-              <AnimatedSection className="destination-card" delay={0.2}>
-                <h3>Torres del Paine</h3>
-                <p>Explore the majestic peaks and glaciers of Patagonia</p>
-              </AnimatedSection>
-              <AnimatedSection className="destination-card" delay={0.4}>
-                <h3>Atacama Desert</h3>
-                <p>Discover the world driest desert and its starry skies</p>
-              </AnimatedSection>
-              <AnimatedSection className="destination-card" delay={0.6}>
-                <h3>Easter Island</h3>
-                <p>Uncover the mysteries of the Moai statues</p>
-              </AnimatedSection>
-              <AnimatedSection className="destination-card" delay={0.8}>
-                <h3>Wine Valleys</h3>
-                <p>Taste world-class wines in scenic vineyards</p>
-              </AnimatedSection>
-            </div>
+            <CarouselComponent 
+              slides={[
+                {
+                  image: '/images/torres-del-paine.jpg',
+                  icon: '/images/mountain-icon.svg',
+                  title: 'Torres del Paine',
+                  description: 'Explore the majestic peaks and glaciers of Patagonia'
+                },
+                {
+                  image: '/images/atacama-desert.jpg',
+                  icon: '/images/desert-icon.svg',
+                  title: 'Atacama Desert',
+                  description: 'Discover the world driest desert and its starry skies'
+                },
+                {
+                  image: '/images/easter-island.jpg',
+                  icon: '/images/statue-icon.svg',
+                  title: 'Easter Island',
+                  description: 'Uncover the mysteries of the Moai statues'
+                },
+                {
+                  image: '/images/wine-valley.jpg',
+                  icon: '/images/wine-icon.svg',
+                  title: 'Wine Valleys',
+                  description: 'Taste world-class wines in scenic vineyards'
+                }
+              ]}
+            />
           </AnimatedSection>
 
           <AnimatedSection className="why-choose-us">

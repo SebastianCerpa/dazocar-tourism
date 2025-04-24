@@ -198,19 +198,86 @@ h2 {
   margin-top: 2rem;
 }
 .about-section {
-  padding: 0 0 0 0; /* Changed from padding: 4rem 0 to remove top padding */
+  padding: 0; /* Removed all padding to allow sections to span full width */
 }
 
 .about-content {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 100%; /* Allow content to span full width */
+  margin: 0;
+}
+
+.about-titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
 }
 
 .mission-vision,
 .company-story,
 .values-section,
 .team-section {
-  margin-bottom: 4rem;
+  margin-bottom: 5rem; /* Reduced from 10rem for better spacing */
+  padding: 4rem 0; /* Vertical padding only */
+  width: 100%; /* Ensure full width */
+  box-shadow: none; /* Remove box shadow as it doesn't make sense for full-width elements */
+  border-radius: 0; /* Remove border radius for full-width sections */
+}
+
+/* Container for the content inside each section */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* New styles for section backgrounds with gradients */
+.mission-vision {
+  background: linear-gradient(180deg, #949494 0%, #ffffff 100%);
+}
+
+.company-story {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+}
+
+.values-section {
+  background: linear-gradient(180deg, #cecece 0%, #ffffff 100%);
+}
+
+.team-section {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+}
+
+/* Add some padding and improve text contrast */
+.mission-vision h2,
+.company-story h2,
+.values-section h2,
+.team-section h2 {
+  color: #333;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.mission-vision h2:after,
+.company-story h2:after,
+.values-section h2:after,
+.team-section h2:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background: #333;
+  bottom: -10px;
+  left: 0;
+}
+
+.mission-vision p,
+.company-story p,
+.values-section p {
+  color: #444;
+  line-height: 1.8;
+  font-size: 1.1rem;
 }
 
 .values-grid {
@@ -218,7 +285,6 @@ h2 {
   flex-wrap: wrap;
   gap: 2rem;
   margin-top: 2rem;
-  justify-content: center;
 }
 
 .value-card {
@@ -228,18 +294,18 @@ h2 {
   background: white;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .about-content h2 {
-  color: #333;
+  color: #000000;
   margin-bottom: 1.5rem;
   text-align: left;
 }
 
 .about-content p {
-  color: #666;
+  color: #000000;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -355,6 +421,193 @@ h2 {
   }
 
   .about-stats {
+    width: 100%;
+  }
+}
+
+/* Service Card Styles (based on the image) */
+.service-card {
+  position: relative;
+  background: white;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
+  min-width: 280px;
+  max-width: calc(33.333% - 1.5rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.service-icon {
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
+  background: #f9f3e8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.service-icon img {
+  width: 35px;
+  height: 35px;
+}
+
+.service-content {
+  padding: 2.5rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.service-content h3 {
+  color: #333;
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.service-content p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Adjust the destination grid to match the new card style */
+.destination-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+/* Carousel Styles for Service Cards */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 2rem;
+}
+
+.carousel-slide {
+  flex: 0 0 auto;
+  width: calc(33.333% - 1.33rem); /* Adjust based on how many cards you want visible */
+  min-width: 280px;
+}
+
+/* Carousel Navigation */
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.carousel-button {
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+  background: #555;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 1rem;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: #333;
+}
+
+/* Card entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+/* Staggered animation delay for cards */
+.service-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.service-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.service-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.service-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .carousel-slide {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-slide {
     width: 100%;
   }
 }
