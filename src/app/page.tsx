@@ -12,7 +12,7 @@ export default function Home() {
         <AnimatedSection className="hero">
           <div className="hero-overlay">
             <div className="hero-content">
-              <h1>Descubre Chile con Gayzocar</h1>
+              <h1>Descubre Chile con Dazocar</h1>
               <p>
                 Del desierto de Atacama a los glaciares de la Patagonia,
                 descubra los paisajes más diversos de Sudamérica
@@ -48,15 +48,15 @@ export default function Home() {
               <div className="about-stats">
                 <div className="stat-item">
                   <span className="stat-number">10+</span>
-                  <span className="stat-label">Years of Experience</span>
+                  <span className="stat-label">Años de Experiencia</span>
                 </div>
                 <div className="stat-item">
                   <span className="stat-number">1000+</span>
-                  <span className="stat-label">Happy Travelers</span>
+                  <span className="stat-label">Turistas Felices</span>
                 </div>
                 <div className="stat-item">
                   <span className="stat-number">50+</span>
-                  <span className="stat-label">Unique Routes</span>
+                  <span className="stat-label">Rutas Únicas</span>
                 </div>
               </div>
             </div>
@@ -65,31 +65,31 @@ export default function Home() {
 
         <div className="container">
           <AnimatedSection className="featured-destinations">
-            <h2>Popular Destinations</h2>
+            <h2>Destinos Populares</h2>
             <CarouselComponent 
               slides={[
                 {
-                  image: '/images/torres-del-paine.jpg',
+                  image: '/images/torres.jpg',
                   icon: '/images/mountain-icon.svg',
                   title: 'Torres del Paine',
                   description: 'Explore the majestic peaks and glaciers of Patagonia'
                 },
                 {
-                  image: '/images/atacama-desert.jpg',
+                  image: '/images/desierto.jpg',
                   icon: '/images/desert-icon.svg',
                   title: 'Atacama Desert',
                   description: 'Discover the world driest desert and its starry skies'
                 },
                 {
-                  image: '/images/easter-island.jpg',
+                  image: '/images/valparaiso.jpg',
                   icon: '/images/statue-icon.svg',
-                  title: 'Easter Island',
+                  title: 'Valparaíso',
                   description: 'Uncover the mysteries of the Moai statues'
                 },
                 {
-                  image: '/images/wine-valley.jpg',
+                  image: '/images/viñedos.jpg',
                   icon: '/images/wine-icon.svg',
-                  title: 'Wine Valleys',
+                  title: 'Tour Viñedos',
                   description: 'Taste world-class wines in scenic vineyards'
                 }
               ]}
@@ -97,21 +97,22 @@ export default function Home() {
           </AnimatedSection>
 
           <AnimatedSection className="why-choose-us">
-            <h2>Why Choose Chile Tours?</h2>
+            <h2>¿Por qué elegirnos?</h2>
             <div className="features-grid">
               <div className="feature">
-                <h3>Expert Local Guides</h3>
+                <h3>Guías locales Expertos</h3>
                 <p>
-                  Our guides know every corner of Chile and its rich history
+                  Nuestros guías conoces cada rincón de Chile y te guiarán
+                  desde el primer momento.
                 </p>
               </div>
               <div className="feature">
-                <h3>Customized Experiences</h3>
-                <p>Tailor-made tours to match your interests and preferences</p>
+                <h3>Experiencia Personalizada</h3>
+                <p>Los tours son desarrollados de acuerdo a su necesidad</p>
               </div>
               <div className="feature">
-                <h3>Sustainable Tourism</h3>
-                <p>Committed to preserving Chile natural beauty</p>
+                <h3>Turismo Sustentable</h3>
+                <p> Comprometidos con la preservación de la belleza natural de Chile </p>
               </div>
             </div>
           </AnimatedSection>
