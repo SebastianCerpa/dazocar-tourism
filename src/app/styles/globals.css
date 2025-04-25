@@ -140,6 +140,10 @@ main {
   margin: 0 auto;
 }
 .featured-destinations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 4rem 0;
 }
 
@@ -204,6 +208,27 @@ h2 {
 .about-content {
   max-width: 100%; /* Allow content to span full width */
   margin: 0;
+}
+
+/* Add responsive padding for smaller screens */
+@media (max-width: 1270px) {
+  .about-content {
+    padding: 0 1.5rem;
+  }
+
+  .value-card {
+    max-width: 100%;
+  }
+  
+  /* Add padding to the container for better mobile experience */
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  /* Ensure the about text has proper padding */
+  .about-text {
+    padding: 0 1rem;
+  }
 }
 
 .about-titles {
@@ -437,6 +462,7 @@ h2 {
   min-width: 280px;
   max-width: calc(33.333% - 1.5rem);
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -465,7 +491,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
 
@@ -494,35 +520,150 @@ h2 {
 /* Adjust the destination grid to match the new card style */
 .destination-grid {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
   margin-top: 2rem;
   justify-content: center;
 }
 
-/* Carousel Styles for Service Cards */
+/* Enhanced Dynamic Carousel Styles */
 .carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   width: 100%;
   overflow: hidden;
   padding: 2rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+  
+  /* Fix carousel track alignment */
+  .carousel-track {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Change to flex-start instead of center */
+    will-change: transform;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Ensure slides have consistent width */
+  .carousel-slide {
+    flex: 0 0 auto;
+    padding: 0.5rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    width: calc(25% - 1rem);
+    box-sizing: border-box;
+  }
+  
+  /* Ensure the carousel track container doesn't add extra space */
+  .carousel-track-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Change to flex-start */
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    cursor: grab;
+    padding: 0;
+    margin: 0;
+  }
+
+
+@media (max-width: 1200px) {
+  .carousel-slide {
+    width: calc(33.333% - 1rem);
+  }
 }
 
-.carousel-track {
+@media (max-width: 992px) {
+  .carousel-slide {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-slide {
+    width: calc(100% - 1rem);
+  }
+}
+
+/* Card Image Container */
+.card-image-container {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Service Card Styles */
+.service-card {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  width: 100%;
   display: flex;
-  transition: transform 0.5s ease-in-out;
-  gap: 2rem;
+  flex-direction: column;
+  transform-origin: center bottom;
 }
 
-.carousel-slide {
-  flex: 0 0 auto;
-  width: calc(33.333% - 1.33rem); /* Adjust based on how many cards you want visible */
-  min-width: 280px;
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.service-icon {
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 70px;
+  height: 70px;
+  background: #f9f3e8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-icon:hover {
+  transform: translateX(-50%) scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-content {
+  padding: 2.5rem 1.5rem 1.5rem;
+  text-align: center;
 }
 
 /* Carousel Navigation */
 .carousel-nav {
   display: flex;
+  align-items: center;
   justify-content: center;
   margin-top: 2rem;
   gap: 1rem;
@@ -533,23 +674,32 @@ h2 {
   color: white;
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-button:hover {
   background: #555;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-button:active {
+  transform: scale(0.95);
 }
 
 .carousel-dots {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.8rem;
   margin: 0 1rem;
+  align-items: center;
 }
 
 .carousel-dot {
@@ -558,49 +708,35 @@ h2 {
   border-radius: 50%;
   background: #ccc;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-dot.active {
   background: #333;
+  transform: scale(1.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Card entrance animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+/* Add a subtle glow effect to active elements */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(51, 51, 51, 0.3);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  50% {
+    box-shadow: 0 0 15px rgba(51, 51, 51, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(51, 51, 51, 0.3);
   }
 }
 
-.service-card {
-  animation: fadeInUp 0.5s ease-out forwards;
-  opacity: 0;
-}
-
-/* Staggered animation delay for cards */
-.service-card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.service-card:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.service-card:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.service-card:nth-child(4) {
-  animation-delay: 0.4s;
+.carousel-dot.active {
+  animation: glow 2s infinite;
 }
 
 /* Responsive adjustments */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .carousel-slide {
     width: calc(50% - 1rem);
   }
@@ -609,5 +745,102 @@ h2 {
 @media (max-width: 768px) {
   .carousel-slide {
     width: 100%;
+  }
+  
+  .carousel-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+/* Ensure the featured-destinations section is properly centered */
+.featured-destinations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.featured-destinations h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: #222;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.3s ease;
+    z-index: 5;
+    padding: 2rem;
+  }
+  
+  .navLinks.active {
+    right: 0;
+  }
+  
+  /* Hamburger animation when menu is open */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+  
+  /* Add overlay when menu is open */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 4;
+  }
+  
+  .overlay.active {
+    display: block;
   }
 }
