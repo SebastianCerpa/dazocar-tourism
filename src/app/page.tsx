@@ -2,14 +2,14 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import { AnimatedSection } from "./components/AnimatedSection";
-import CarouselComponent from './components/CarouselComponent';
+import CarouselComponent from "./components/CarouselComponent";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <main>
-        <AnimatedSection className="hero">
+        <div className="hero">
           <div className="hero-overlay">
             <div className="hero-content">
               <h1>Descubre Chile con Dazocar</h1>
@@ -22,7 +22,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
         <AnimatedSection className="home-about">
           <div className="container">
@@ -63,60 +63,94 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-        <div className="container">
-          <AnimatedSection className="featured-destinations">
-            <h2>Destinos Populares</h2>
-            <CarouselComponent 
-              slides={[
-                {
-                  image: '/images/torres.jpg',
-                  icon: '/images/mountain-icon.svg',
-                  title: 'Torres del Paine',
-                  description: 'Explore the majestic peaks and glaciers of Patagonia'
-                },
-                {
-                  image: '/images/desierto.jpg',
-                  icon: '/images/desert-icon.svg',
-                  title: 'Atacama Desert',
-                  description: 'Discover the world driest desert and its starry skies'
-                },
-                {
-                  image: '/images/valparaiso.jpg',
-                  icon: '/images/statue-icon.svg',
-                  title: 'Valparaíso',
-                  description: 'Uncover the mysteries of the Moai statues'
-                },
-                {
-                  image: '/images/viñedos.jpg',
-                  icon: '/images/wine-icon.svg',
-                  title: 'Tour Viñedos',
-                  description: 'Taste world-class wines in scenic vineyards'
-                }
-              ]}
-            />
-          </AnimatedSection>
+        <div className="featured-destinations-section">
+          <div className="container">
+            <AnimatedSection className="featured-destinations">
+              <h2>Destinos Populares</h2>
+              <p>
+                Descubre algunos de nuestros destinos más populares de nuestro
+                país
+              </p>
+              <CarouselComponent
+                slides={[
+                  {
+                    image: "/images/torres.jpg",
+                    icon: "/images/mountain-icon.svg",
+                    title: "Torres del Paine",
+                    description:
+                      "Explore the majestic peaks and glaciers of Patagonia",
+                  },
+                  {
+                    image: "/images/desierto.jpg",
+                    icon: "/images/desert-icon.svg",
+                    title: "Atacama Desert",
+                    description:
+                      "Discover the world driest desert and its starry skies",
+                  },
+                  {
+                    image: "/images/valparaiso.jpg",
+                    icon: "/images/valparaiso-icon.svg",
+                    title: "Valparaíso",
+                    description: "Uncover the mysteries of the Moai statues",
+                  },
+                  {
+                    image: "/images/viñedos.jpg",
+                    icon: "/images/wine-icon.svg",
+                    title: "Tour Viñedos",
+                    description: "Taste world-class wines in scenic vineyards",
+                  },
+                ]}
+              />
+            </AnimatedSection>
+          </div>
+        </div>
 
-          <AnimatedSection className="why-choose-us">
+        <AnimatedSection className="why-choose-us">
+          <div className="container">
             <h2>¿Por qué elegirnos?</h2>
             <div className="features-grid">
               <div className="feature">
+                <div className="feature-icon">
+                  <img
+                    src="/images/icons/guide-icon.svg"
+                    alt="Guías Expertos"
+                  />
+                </div>
                 <h3>Guías locales Expertos</h3>
                 <p>
-                  Nuestros guías conoces cada rincón de Chile y te guiarán
-                  desde el primer momento.
+                  Nuestros guías conocen cada rincón de Chile y te guiarán desde
+                  el primer momento.
                 </p>
+                <div className="feature-number">01</div>
               </div>
               <div className="feature">
+                <div className="feature-icon">
+                  <img
+                    src="/images/icons/personalized-icon.svg"
+                    alt="Experiencia Personalizada"
+                  />
+                </div>
                 <h3>Experiencia Personalizada</h3>
                 <p>Los tours son desarrollados de acuerdo a su necesidad</p>
+                <div className="feature-number">02</div>
               </div>
               <div className="feature">
+                <div className="feature-icon">
+                  <img
+                    src="/images/icons/sustainable-icon.svg"
+                    alt="Turismo Sustentable"
+                  />
+                </div>
                 <h3>Turismo Sustentable</h3>
-                <p> Comprometidos con la preservación de la belleza natural de Chile </p>
+                <p>
+                  Comprometidos con la preservación de la belleza natural de
+                  Chile
+                </p>
+                <div className="feature-number">03</div>
               </div>
             </div>
-          </AnimatedSection>
-        </div>
+          </div>
+        </AnimatedSection>
       </main>
       <Footer />
     </>
