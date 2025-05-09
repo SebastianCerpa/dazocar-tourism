@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Colorful houses on hills -->
+  <rect x="2" y="12" width="4" height="8" fill="#FF6B6B" stroke="#333"/>
+  <rect x="6" y="10" width="4" height="10" fill="#4ECDC4" stroke="#333"/>
+  <rect x="10" y="13" width="4" height="7" fill="#FFD166" stroke="#333"/>
+  <rect x="14" y="11" width="4" height="9" fill="#F86624" stroke="#333"/>
+  <rect x="18" y="14" width="4" height="6" fill="#7A28CB" stroke="#333"/>
+  
+  <!-- Hill contour -->
+  <path d="M1,20 C1,20 4,15 8,14 C12,13 16,16 20,15 C24,14 24,20 24,20" stroke="#333" fill="none"/>
+  
+  <!-- Funicular/cable car -->
+  <line x1="7" y1="8" x2="17" y2="4" stroke="#333"/>
+  <rect x="6" y="7" width="2" height="2" fill="#F9C80E" stroke="#333"/>
+  <rect x="16" y="3" width="2" height="2" fill="#F9C80E" stroke="#333"/>
+</svg>

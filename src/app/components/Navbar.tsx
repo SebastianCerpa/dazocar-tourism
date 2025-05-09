@@ -1,6 +1,6 @@
-'use client';
-import { useState } from 'react';
-import Link from 'next/link';
+"use client";
+import { useState } from "react";
+import Link from "next/link";
 
 interface NavLinkProps {
   href: string;
@@ -20,32 +20,32 @@ const NavLink: React.FC<NavLinkProps> = ({ href, label, onClick }) => {
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  
+
   const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen);
   };
-  
+
   const closeMenu = (): void => {
     setIsMenuOpen(false);
   };
-  
+
   return (
     <>
       <nav className="navbar">
         <div className="logo">
           <Link href="/">Dazocar</Link>
         </div>
-        
-        <div 
-          className={`hamburger ${isMenuOpen ? 'active' : ''}`} 
+
+        <div
+          className={`hamburger ${isMenuOpen ? "active" : ""}`}
           onClick={toggleMenu}
         >
           <span></span>
           <span></span>
           <span></span>
         </div>
-        
-        <ul className={`navLinks ${isMenuOpen ? 'active' : ''}`}>
+
+        <ul className={`navLinks ${isMenuOpen ? "active" : ""}`}>
           <NavLink href="/" label="Home" onClick={closeMenu} />
           <NavLink href="/about" label="About" onClick={closeMenu} />
           <NavLink href="/services" label="Services" onClick={closeMenu} />
@@ -53,9 +53,9 @@ const Navbar: React.FC = () => {
           <NavLink href="/contact" label="Contact" onClick={closeMenu} />
         </ul>
       </nav>
-      
-      <div 
-        className={`overlay ${isMenuOpen ? 'active' : ''}`} 
+
+      <div
+        className={`overlay ${isMenuOpen ? "active" : ""}`}
         onClick={closeMenu}
       ></div>
     </>
