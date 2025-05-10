@@ -6,12 +6,10 @@ export default function Gallery() {
     <>
       <Navbar />
       <main className="flex-1">
-        <div className="hero">
-          <div className="hero-overlay">
-            <div className="hero-content">
-              <h1>Gallery</h1>
-              <p>Visual journey through Chile most beautiful destinations</p>
-            </div>
+        <div className="page-header">
+          <div className="header-content">
+            <h1>Gallery</h1>
+            <p>Visual journey through Chile most beautiful destinations</p>
           </div>
         </div>
         <div className="container">{/* Add your gallery content here */}</div>

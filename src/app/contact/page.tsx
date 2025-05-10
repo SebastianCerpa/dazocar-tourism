@@ -6,12 +6,10 @@ export default function Contact() {
     <>
       <Navbar />
       <main className="flex-1">
-        <div className="hero">
-          <div className="hero-overlay">
-            <div className="hero-content">
-              <h1>Contact Us</h1>
-              <p>Get in touch to plan your Chilean adventure</p>
-            </div>
+        <div className="page-header">
+          <div className="header-content">
+            <h1>Contact Us</h1>
+            <p>Get in touch to plan your Chilean adventure</p>
           </div>
         </div>
         <div className="container">
