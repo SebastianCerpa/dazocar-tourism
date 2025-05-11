@@ -75,27 +75,27 @@ export default function Home() {
                 slides={[
                   {
                     image: "/images/torres.jpg",
-                    icon: "/images/mountain-icon.svg",
+                    icon: "/images/logo.png",
                     title: "Torres del Paine",
                     description:
                       "Explore the majestic peaks and glaciers of Patagonia",
                   },
                   {
                     image: "/images/desierto.jpg",
-                    icon: "/images/desert-icon.svg",
+                    icon: "/images/logo.png",
                     title: "Atacama Desert",
                     description:
                       "Discover the world driest desert and its starry skies",
                   },
                   {
                     image: "/images/valparaiso.jpg",
-                    icon: "/images/valparaiso-icon.svg",
+                    icon: "/images/logo.png",
                     title: "Valparaíso",
                     description: "Uncover the mysteries of the Moai statues",
                   },
                   {
                     image: "/images/viñedos.jpg",
-                    icon: "/images/wine-icon.svg",
+                    icon: "/images/logo.png",
                     title: "Tour Viñedos",
                     description: "Taste world-class wines in scenic vineyards",
                   },

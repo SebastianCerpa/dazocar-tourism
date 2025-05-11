@@ -204,7 +204,7 @@ a {
   max-width: 500px;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 5px 15px var(--color-shadow);
+  box-shadow: 7px 10px 6px 7px var(--color-shadow);
   transition: transform 0.3s ease;
 }
 
@@ -330,15 +330,27 @@ a {
 .navbar {
   background-color: var(--color-background-dark);
   color: var(--color-text-light);
-  padding: 1rem 2rem;
+  padding: 1rem 5rem;
   display: flex;
-  justify-content: space-between; /* This is already correct */
+  justify-content: space-between;
   align-items: center;
   width: 100%; /* Ensure navbar spans full width */
 }
 
 .logo {
   margin-right: auto; /* Pushes logo to the left */
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
 }
 
 .navLinks {
@@ -644,26 +656,26 @@ h2 {
 
 .feature-icon,
 .value-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--color-gray-100);
   border-radius: 50%;
-  box-shadow: 0 5px 15px var(--color-shadow);
+  box-shadow: 0 4px 12px var(--color-shadow);
   transition: all 0.3s ease;
 }
 
 .value-icon {
-  margin: 0.5rem auto 1rem;
+  margin: 0.5rem auto 0.75rem;
   transition: transform 0.3s ease;
 }
 
 .value-icon img {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
 }
 
@@ -876,7 +888,7 @@ h2 {
   z-index: 2;
 }
 
-/* Elegant section backgrounds with subtle patterns */
+/* section backgrounds with subtle patterns */
 .mission-vision {
   background: linear-gradient(
     180deg,
@@ -1029,22 +1041,25 @@ h2 {
   animation: slideInLeft 0.8s 0.1s forwards;
 }
 
+/* Our values cards */
 .values-grid {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 3rem;
+  gap: 5rem;
+  margin-top: 3.5rem;
 }
 
 .value-card {
   flex: 1;
-  min-width: 250px;
-  max-width: calc(33.333% - 1.5rem);
-  min-height: 450px;
+  min-width: 280px;
+  max-width: calc(25% - 1rem);
+  min-height: 380px;
   background: var(--color-background-primary);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px var(--color-shadow);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 1px 8px 20px var(--color-shadow);
   text-align: center;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
@@ -1054,18 +1069,17 @@ h2 {
   animation: valueCardAppear 0.5s forwards;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
   will-change: transform, box-shadow;
 }
 
 .value-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
   color: var(--color-text-primary);
   position: relative;
-  padding-bottom: 0.8rem;
+  padding-bottom: 0.6rem;
 }
 
 .value-card p {
@@ -1091,8 +1105,8 @@ h2 {
 
 .value-card p {
   color: var(--color-text-secondary);
-  line-height: 1.7;
-  font-size: 1rem;
+  line-height: 1.6;
+  font-size: 0.9rem;
   margin-bottom: 0;
 }
 
@@ -1132,14 +1146,14 @@ h2 {
 .value-image {
   width: 100%;
   margin-top: auto;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
-  height: 180px;
+  height: 140px;
 }
 
 .value-image img {
   width: 100%;
-  height: 180px;
+  height: 140px;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
@@ -1192,6 +1206,8 @@ h2 {
     max-width: 100%;
   }
 }
+
+/* Home About Section */
 
 .home-about {
   padding: 5rem 0;
@@ -1440,7 +1456,7 @@ h2 {
   top: 180px;
   left: 50%;
   transform: translateX(-50%);
-  width: 70px;
+  width: 90px;
   height: 70px;
   background: var(--color-gray-200);
   border-radius: 50%;
@@ -1452,8 +1468,8 @@ h2 {
 }
 
 .service-icon img {
-  width: 35px;
-  height: 35px;
+  width: 72px;
+  height: 72px;
 }
 
 .service-content {

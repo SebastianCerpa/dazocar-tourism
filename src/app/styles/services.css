@@ -1,0 +1,118 @@
+/* Services Page Styles */
+
+.services-section {
+  width: 100%;
+  background-color: var(--color-background-primary);
+}
+
+.services-intro {
+  padding: 4rem 0;
+  background-color: var(--color-background-secondary);
+}
+
+.section-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Service category label */
+.destination-region {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  background-color: rgba(var(--color-accent-rgb), 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+}
+
+/* Service features */
+.destination-activities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+}
+
+.activity-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  background-color: var(--color-gray-200);
+  color: var(--color-text-primary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.activity-tag:hover {
+  background-color: var(--color-accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Service cards styling */
+.value-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+  margin-bottom: 1rem;
+}
+
+.value-icon svg, .value-icon img {
+  width: 40px;
+  height: 40px;
+  color: var(--color-accent);
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    var(--color-accent-dark) 100%
+  );
+  color: white;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  margin-top: 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .story-content {
+    flex-direction: column;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-activities {
+    justify-content: center;
+  }
+}
