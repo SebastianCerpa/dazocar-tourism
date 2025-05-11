@@ -33,7 +33,9 @@ const Navbar: React.FC = () => {
     <>
       <nav className="navbar">
         <div className="logo">
-          <Link href="/">Dazocar</Link>
+          <Link href="/">
+            <img src="/images/logo-navbar.png" alt="Dazocar Logo" height="40" />
+          </Link>
         </div>
 
         <div
@@ -49,7 +51,6 @@ const Navbar: React.FC = () => {
           <NavLink href="/" label="Home" onClick={closeMenu} />
           <NavLink href="/about" label="About" onClick={closeMenu} />
           <NavLink href="/services" label="Services" onClick={closeMenu} />
-          <NavLink href="/gallery" label="Gallery" onClick={closeMenu} />
           <NavLink href="/contact" label="Contact" onClick={closeMenu} />
         </ul>
       </nav>
