@@ -10,12 +10,6 @@ const AboutPage: React.FC = () => {
     <>
       <Navbar />
       <div className="about-section">
-        <div className="container" style={{padding: "3rem 0"}}>
-          <h1 style={{textAlign: "center", marginBottom: "1rem"}}>About Dazocar</h1>
-          <p style={{textAlign: "center", maxWidth: "700px", margin: "0 auto 2rem"}}>
-            Discover the story behind our passion for showcasing Chile beauty
-          </p>
-        </div>
 
         <section className="company-story">
           <div className="section-container story-content">

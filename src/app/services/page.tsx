@@ -50,15 +50,6 @@ export default function Services() {
     <>
       <Navbar />
       <div className="services-section">
-        <div className="page-header">
-          <div className="header-content">
-            <h1>Our Services</h1>
-            <p>
-              Discover the incredible destinations and experiences we offer
-              throughout Chile
-            </p>
-          </div>
-        </div>
 
         <AnimatedSection>
           <section className="services-intro">
