@@ -1,20 +1,86 @@
+# Chile Tourism Website
+
+A modern, responsive website for a tourism company in Chile, showcasing various tours, services, and destinations.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+### Database Setup
+
+This project uses PostgreSQL with Prisma ORM to manage the database. Follow these steps to set up the database:
+
+#### Prerequisites
+
+- PostgreSQL installed and running on your machine
+- Node.js and npm installed
+
+#### Setup Instructions
+
+1. **Install dependencies**
+
+```bash
+npm install
+```
+
+2. **Configure your database**
+
+Create a PostgreSQL database named `chile_tourism`. The default connection string in the `.env` file is:
+
+```
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/chile_tourism"
+```
+
+If your PostgreSQL setup uses different credentials, update the `.env` file accordingly.
+
+3. **Generate Prisma client**
+
+```bash
+npm run prisma:generate
+```
+
+4. **Run database migrations**
+
+```bash
+npm run prisma:migrate
+```
+
+5. **Seed the database with initial data**
+
+```bash
+npm run db:seed
+```
+
+6. **Start the development server**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Database Schema
+
+The database includes the following models:
+
+- **ServiceCategory**: Categories of services (e.g., Traditional Tours, Traditional Vineyards)
+- **Service**: Individual services within each category (e.g., City Tour, Valparaíso Tour)
+- **ContactSubmission**: Stores contact form submissions from users
+- **User**: Admin users for potential future admin panel
+
+## API Routes
+
+The application includes the following API routes:
+
+- **GET /api/service-categories**: Retrieves all service categories with their services
+- **POST /api/contact**: Handles contact form submissions
+
+## Development Tools
+
+- **Prisma Studio**: A visual database editor for viewing and editing data
+  ```bash
+  npm run prisma:studio
+  ```
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

@@ -28,17 +28,48 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    // For now, we'll just simulate a successful submission
-    setFormStatus({
-      submitted: true,
-      error: false,
-      message: 'Gracias por su mensaje. Nos pondremos en contacto con usted en breve.'
-    });
-    // Reset form after submission
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    
+    try {
+      // Set loading state
+      setFormStatus({
+        submitted: false,
+        error: false,
+        message: 'Enviando mensaje...'
+      });
+      
+      // Send form data to the API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Error al enviar el formulario');
+      }
+      
+      // Success
+      setFormStatus({
+        submitted: true,
+        error: false,
+        message: 'Gracias por su mensaje. Nos pondremos en contacto con usted en breve.'
+      });
+      
+      // Reset form after successful submission
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setFormStatus({
+        submitted: true,
+        error: true,
+        message: error instanceof Error ? error.message : 'Error al enviar el formulario. Por favor, inténtelo de nuevo.'
+      });
+    }
   };
 
   return (
