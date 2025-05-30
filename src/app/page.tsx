@@ -28,7 +28,7 @@ export default function Home() {
           <div className="container">
             <div className="about-wrapper">
               <div className="about-text">
-                <h2>Acerca de Gayzocar</h2>
+                <h2>Acerca de Dazocar</h2>
                 <p>
                   Con más de dos décadas de experiencia, nos especializamos en
                   crear viajes inolvidables a través de los paisajes más
@@ -38,7 +38,7 @@ export default function Home() {
                 </p>
                 <div className="about-buttons">
                   <Link href="/about" className="learn-more-btn">
-                    Learn More About Us
+                    Descubre más sobre nosotros
                   </Link>
                   <Link href="/contact" className="contact-btn">
                     Contact Us
@@ -101,6 +101,9 @@ export default function Home() {
                   },
                 ]}
               />
+                  <Link href="/destinations" className="learn-more-btn">
+                    Descubre más
+                  </Link>
             </AnimatedSection>
           </div>
         </div>

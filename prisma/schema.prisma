@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Models for the Chile Tourism Website
+
+// Service Category model (e.g., Traditional Tours, Traditional Vineyards)
+model ServiceCategory {
+  id          String    @id @default(uuid())
+  title       String
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  services    Service[]
+}
+
+// Service model (e.g., City Tour, Valparaíso Tour, Concha y Toro)
+model Service {
+  id               String          @id @default(uuid())
+  name             String
+  description      String
+  details          String          @db.Text
+  schedules        String
+  image            String
+  thumbnailImage   String
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  categoryId       String
+  category         ServiceCategory @relation(fields: [categoryId], references: [id])
+}
+
+// Contact form submissions
+model ContactSubmission {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  subject   String
+  message   String   @db.Text
+  createdAt DateTime @default(now())
+  status    String   @default("pending") // pending, processed, responded
+}
+
+// User model for admin access
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
+  password  String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
