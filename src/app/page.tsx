@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Link from "next/link";
 import { AnimatedSection } from "./components/AnimatedSection";
 import CarouselComponent from "./components/CarouselComponent";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -101,55 +102,92 @@ export default function Home() {
                   },
                 ]}
               />
-                  <Link href="/destinations" className="learn-more-btn">
-                    Descubre más
-                  </Link>
+              <Link href="/destinations" className="learn-more-btn">
+                Descubre más
+              </Link>
             </AnimatedSection>
           </div>
         </div>
 
-        <AnimatedSection className="why-choose-us">
+        <AnimatedSection className="why-choose-us-business">
           <div className="container">
-            <h2>¿Por qué elegirnos?</h2>
-            <div className="features-grid">
-              <div className="feature">
-                <div className="feature-icon">
-                  <img
-                    src="/images/icons/guide-icon.svg"
-                    alt="Guías Expertos"
-                  />
+            <div className="section-header">
+              <h2>¿Por qué elegirnos?</h2>
+              <div className="section-underline"></div>
+              <p className="section-subtitle">
+                Descubre las razones por las que somos la mejor opción para
+                explorar Chile con un servicio profesional y personalizado.
+              </p>
+            </div>
+
+            <div className="business-features-grid">
+              <div className="business-feature">
+                <div className="business-feature-content">
+                  <div className="business-feature-icon">
+                    <Image
+                      src="/images/service-icon.svg"
+                      alt="Servicio Premium"
+                      width={64}
+                      height={64}
+                      className="icon-image"
+                    />
+                  </div>
+                  <div className="business-feature-text">
+                    <h3>Servicio Premium</h3>
+                    <p>
+                      Ofrecemos una experiencia de viaje de alta calidad con
+                      atención personalizada y cuidado en cada detalle para
+                      superar sus expectativas.
+                    </p>
+                  </div>
                 </div>
-                <h3>Guías locales Expertos</h3>
-                <p>
-                  Nuestros guías conocen cada rincón de Chile y te guiarán desde
-                  el primer momento.
-                </p>
-                <div className="feature-number">01</div>
+                <div className="business-feature-number">01</div>
               </div>
-              <div className="feature">
-                <div className="feature-icon">
-                  <img
-                    src="/images/icons/personalized-icon.svg"
-                    alt="Experiencia Personalizada"
-                  />
+
+              <div className="business-feature">
+                <div className="business-feature-content">
+                  <div className="business-feature-icon">
+                    <Image
+                      src="/images/destination-icon.svg"
+                      alt="Destinos Exclusivos"
+                      width={64}
+                      height={64}
+                      className="icon-image"
+                    />
+                  </div>
+                  <div className="business-feature-text">
+                    <h3>Destinos Exclusivos</h3>
+                    <p>
+                      Acceda a lugares únicos y experiencias exclusivas
+                      cuidadosamente seleccionadas para crear recuerdos
+                      inolvidables.
+                    </p>
+                  </div>
                 </div>
-                <h3>Experiencia Personalizada</h3>
-                <p>Los tours son desarrollados de acuerdo a su necesidad</p>
-                <div className="feature-number">02</div>
+                <div className="business-feature-number">02</div>
               </div>
-              <div className="feature">
-                <div className="feature-icon">
-                  <img
-                    src="/images/icons/sustainable-icon.svg"
-                    alt="Turismo Sustentable"
-                  />
+
+              <div className="business-feature">
+                <div className="business-feature-content">
+                  <div className="business-feature-icon">
+                    <Image
+                      src="/images/sustainability-icon.svg"
+                      alt="Compromiso Sustentable"
+                      width={64}
+                      height={64}
+                      className="icon-image"
+                    />
+                  </div>
+                  <div className="business-feature-text">
+                    <h3>Compromiso Sustentable</h3>
+                    <p>
+                      Nuestras operaciones están diseñadas para minimizar el
+                      impacto ambiental y contribuir positivamente a las
+                      comunidades locales.
+                    </p>
+                  </div>
                 </div>
-                <h3>Turismo Sustentable</h3>
-                <p>
-                  Comprometidos con la preservación de la belleza natural de
-                  Chile
-                </p>
-                <div className="feature-number">03</div>
+                <div className="business-feature-number">03</div>
               </div>
             </div>
           </div>
