@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Link from "next/link";
@@ -5,7 +8,49 @@ import { AnimatedSection } from "./components/AnimatedSection";
 import CarouselComponent from "./components/CarouselComponent";
 import Image from "next/image";
 
+interface FeaturedDestination {
+  id: number;
+  image: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+
 export default function Home() {
+  const [featuredDestinations, setFeaturedDestinations] = useState<
+    FeaturedDestination[]
+  >([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  const fetchFeaturedDestinations = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch("/api/featured-destinations");
+      if (!response.ok) {
+        throw new Error("Failed to fetch featured destinations");
+      }
+      const data = await response.json();
+      setFeaturedDestinations(data.data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An error occurred");
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (isMounted) {
+      fetchFeaturedDestinations();
+    }
+  }, [fetchFeaturedDestinations, isMounted]);
+
   return (
     <>
       <Navbar />
@@ -18,9 +63,6 @@ export default function Home() {
                 Del desierto de Atacama a los glaciares de la Patagonia,
                 descubra los paisajes más diversos de Sudamérica
               </p>
-              <a href="/tours" className="cta-button">
-                Descubre nuestros Tours
-              </a>
             </div>
           </div>
         </div>
@@ -31,11 +73,13 @@ export default function Home() {
               <div className="about-text">
                 <h2>Acerca de Dazocar</h2>
                 <p>
-                  Con más de dos décadas de experiencia, nos especializamos en
-                  crear viajes inolvidables a través de los paisajes más
-                  impresionantes de Chile. Nuestra pasión por los viajes y
-                  nuestro profundo conocimiento de la cultura chilena garantizan
-                  experiencias auténticas que van más allá del turismo típico.
+                  Somos una empresa con más de 15 años de experiencia en el
+                  mundo del turismo. Velamos por el interés y la seguridad de
+                  nuestros clientes brindándoles comodidad, confianza y un
+                  servicio de calidad a la altura de sus expectativas. Creemos
+                  en la necesidad de entregar un servicio diferenciado y
+                  personalizado a los distintos tipos de clientes, garantizando
+                  servicios turísticos de calidad con todos
                 </p>
                 <div className="about-buttons">
                   <Link href="/about" className="learn-more-btn">
@@ -72,36 +116,28 @@ export default function Home() {
                 Descubre algunos de nuestros destinos más populares de nuestro
                 país
               </p>
-              <CarouselComponent
-                slides={[
-                  {
-                    image: "/images/torres.jpg",
-                    icon: "/images/logo.png",
-                    title: "Torres del Paine",
-                    description:
-                      "Explore the majestic peaks and glaciers of Patagonia",
-                  },
-                  {
-                    image: "/images/desierto.jpg",
-                    icon: "/images/logo.png",
-                    title: "Atacama Desert",
-                    description:
-                      "Discover the world driest desert and its starry skies",
-                  },
-                  {
-                    image: "/images/valparaiso.jpg",
-                    icon: "/images/logo.png",
-                    title: "Valparaíso",
-                    description: "Uncover the mysteries of the Moai statues",
-                  },
-                  {
-                    image: "/images/viñedos.jpg",
-                    icon: "/images/logo.png",
-                    title: "Tour Viñedos",
-                    description: "Taste world-class wines in scenic vineyards",
-                  },
-                ]}
-              />
+
+              {(!isMounted || loading) && (
+                <div className="carousel-loading">
+                  <p>Cargando destinos...</p>
+                </div>
+              )}
+
+              {!loading && error && (
+                <div className="carousel-error">
+                  <p>Error al cargar destinos: {error}</p>
+                </div>
+              )}
+
+              {!loading && !error && featuredDestinations.length > 0 && (
+                <CarouselComponent slides={featuredDestinations} />
+              )}
+
+              {!loading && !error && featuredDestinations.length === 0 && (
+                <div className="no-destinations">
+                  <p>No hay destinos destacados disponibles</p>
+                </div>
+              )}
               <Link href="/destinations" className="learn-more-btn">
                 Descubre más
               </Link>
@@ -130,6 +166,10 @@ export default function Home() {
                       width={64}
                       height={64}
                       className="icon-image"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = "none";
+                      }}
                     />
                   </div>
                   <div className="business-feature-text">
@@ -141,7 +181,6 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="business-feature-number">01</div>
               </div>
 
               <div className="business-feature">
@@ -153,6 +192,10 @@ export default function Home() {
                       width={64}
                       height={64}
                       className="icon-image"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = "none";
+                      }}
                     />
                   </div>
                   <div className="business-feature-text">
@@ -164,7 +207,6 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="business-feature-number">02</div>
               </div>
 
               <div className="business-feature">
@@ -176,6 +218,10 @@ export default function Home() {
                       width={64}
                       height={64}
                       className="icon-image"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = "none";
+                      }}
                     />
                   </div>
                   <div className="business-feature-text">
@@ -187,7 +233,6 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="business-feature-number">03</div>
               </div>
             </div>
           </div>

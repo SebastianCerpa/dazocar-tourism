@@ -1,56 +1,48 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import "../styles/globals.css";
 import "../styles/services.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { AnimatedSection } from "../components/AnimatedSection";
+import Image from "next/image";
 
-// Sample service data - in a real app, this would come from an API or CMS
-const services = [
-  {
-    id: 1,
-    name: "Personalized Service",
-    category: "Premium",
-    description:
-      "Tailored travel experiences designed specifically for your preferences and interests. Our personalized service includes private guides, customized itineraries, and exclusive access to unique locations throughout Chile.",
-    image: "/images/serv-personalizado.png", 
-    features: ["Private Guides", "Custom Itineraries", "Luxury Transportation"],
-  },
-  {
-    id: 2,
-    name: "Standardized Service",
-    category: "Classic",
-    description:
-      "Our most popular option offering well-planned group tours to Chile's iconic destinations. These services follow carefully crafted itineraries with professional guides and comfortable accommodations.",
-    image: "/images/serv-standar.png", 
-    features: ["Group Tours", "Fixed Itineraries", "Professional Guides"],
-  },
-  {
-    id: 3,
-    name: "Family Service",
-    category: "Specialized",
-    description:
-      "Family-friendly adventures designed with children and parents in mind. These services include age-appropriate activities, family accommodations, and guides experienced in working with children of all ages.",
-    image: "/images/serv-family.png", 
-    features: ["Kid-Friendly Activities", "Family Accommodations", "Educational Experiences"],
-  },
-  {
-    id: 4,
-    name: "Business Service",
-    category: "Corporate",
-    description:
-      "Professional services for corporate clients including team-building retreats, conference planning, and executive tours. We handle all logistics while maintaining the highest standards of professionalism and comfort.",
-    image: "/images/serv-business.jpg", 
-    features: ["Corporate Retreats", "Conference Planning", "Executive Transportation"],
-  },
-];
+interface Service {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+}
 
 export default function Services() {
+  const [services, setServices] = useState<Service[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetchServices();
+  }, []);
+
+  const fetchServices = async () => {
+    try {
+      const response = await fetch("/api/services");
+      if (!response.ok) {
+        throw new Error("Failed to fetch services");
+      }
+      const data = await response.json();
+      setServices(data.data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An error occurred");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <Navbar />
       <div className="services-section">
-
         <AnimatedSection>
           <section className="services-intro">
             <div className="section-container story-content">
@@ -73,10 +65,12 @@ export default function Services() {
                 </p>
               </div>
               <div className="story-image">
-                <img
+                <Image
                   src="/images/chile-map.jpg"
                   alt="Map of Chile highlighting tourist destinations"
                   className="about-img"
+                  width={500}
+                  height={400}
                 />
               </div>
             </div>
@@ -88,26 +82,52 @@ export default function Services() {
             <div className="section-container">
               <h2>Our Services</h2>
               <p className="section-description">
-                We offer a range of specialized services to meet the needs of every traveler,
-                from personalized luxury experiences to family-friendly adventures
+                We offer a range of specialized services to meet the needs of
+                every traveler, from personalized luxury experiences to
+                family-friendly adventures
               </p>
-              <div className="values-grid">
-                {services.map((service) => (
-                  <div className="value-card" key={service.id}>
-                    <h3>{service.name}</h3>
-                    <span className="destination-region">
-                      {service.category}
-                    </span>
-                    <p>{service.description}</p>
-                    <div className="value-image">
-                      <img
-                        src={service.image}
-                        alt={`${service.name} - ${service.category} service`}
-                      />
+
+              {loading && (
+                <div className="loading-container">
+                  <p>Loading services...</p>
+                </div>
+              )}
+
+              {error && (
+                <div className="error-container">
+                  <p>Error: {error}</p>
+                </div>
+              )}
+
+              {!loading && !error && (
+                <div className="values-grid">
+                  {services.map((service, index) => (
+                    <div
+                      className="value-card"
+                      key={service.id}
+                      data-number={`0${index + 1}`}
+                    >
+                      <div className="value-card-content">
+                        <h3>{service.name}</h3>
+                        <p>{service.description}</p>
+                      </div>
+                      <div className="value-image">
+                        <Image
+                          src={service.image}
+                          alt={`${service.name} service`}
+                          width={400}
+                          height={300}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                          }}
+                        />
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
             </div>
           </section>
         </AnimatedSection>
