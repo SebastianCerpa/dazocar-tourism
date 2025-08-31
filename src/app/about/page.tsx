@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/globals.css";
-// Values styles are now in globals.css
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { AnimatedSection } from "../components/AnimatedSection";
@@ -139,7 +138,6 @@ const AboutPage: React.FC = () => {
                   geography, culture, and hidden gems, we are dedicated to
                   creating unforgettable experiences for every traveler.
                 </p>
-                {/* You can add team member cards or photos here */}
               </div>
             </section>
           </AnimatedSection>
