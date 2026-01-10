@@ -19,8 +19,8 @@ async function main() {
         create: [
           {
             name: 'City Tour / Santiago',
-            description: 'Explore the vibrant capital of Chile with our guided city tour. Discover the perfect blend of historical landmarks and modern architecture.',
-            details: 'Our Santiago City Tour offers two options to fit your schedule: a 4-hour half-day experience covering the main attractions, or an 8-hour full-day immersion that includes lunch at a local restaurant and visits to additional sites. You\'ll explore Plaza de Armas, San Cristobal Hill, Bellavista neighborhood, and more with our knowledgeable guides who provide cultural and historical context throughout the journey.',
+            description: 'Una ciudad histórica y de contrastes donde lo antiguo y lo moderno forman una metrópolis vanguardista.',
+            details: 'Santiago, una ciudad histórica y de contrastes donde lo antiguo y lo moderno forman una metrópolis vanguardista. Parques, edificios, barrios patrimoniales y museos dan vida a una de las mejores ciudades de Sudamérica para visitar. En nuestro tour podrá recorrer el centro histórico de Santiago, la plaza de armas, el centro gubernamental, el barrio bohemio y podrá, además, subir hasta uno de los puntos más altos de la ciudad, el cerro San Cristóbal',
             schedules: '4h half day (9:00 AM - 1:00 PM) – 8h full day (9:00 AM - 5:00 PM)',
             image: '/images/city-tour.jpg',
             thumbnailImage: '/images/chile-landscape.jpg'

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   /* Primary Colors */
   --color-black: #000000;
@@ -32,8 +34,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: var(--color-background-primary);
   color: var(--color-text-primary);
   min-height: 100vh;
@@ -46,13 +47,32 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "GRAD" 0;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+}
+
+
 /* Home page hero section */
 .hero {
   position: relative;
   width: 100%;
   height: 70vh;
-  background-image: url("/images/hero4.jpg"); /* Home page hero image */
+  background-image: url("/images/hero4.jpg");
+  /* Home page hero image */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -70,15 +90,13 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.6)
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.6));
   z-index: 1;
 }
 
-/* Professional page header for non-home pages */
+/* Page header for non-home pages */
 .page-header {
   position: relative;
   width: 100%;
@@ -102,11 +120,9 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.5) 100%);
   z-index: 1;
 }
 
@@ -134,11 +150,9 @@ a {
   position: absolute;
   width: 60px;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    var(--color-gray-300) 0%,
-    var(--color-gray-500) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--color-gray-300) 0%,
+      var(--color-gray-500) 100%);
   bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
@@ -172,7 +186,6 @@ a {
 }
 
 .story-text h2 {
-  font-size: 2rem;
   margin-bottom: 1.5rem;
   position: relative;
 }
@@ -227,10 +240,12 @@ a {
     max-width: 100%;
   }
 }
+
 .hero-content {
   align-items: center;
   text-align: center;
-  max-width: 800px; /* Limit width for better readability */
+  max-width: 800px;
+  /* Limit width for better readability */
   padding: 1rem;
   position: relative;
   z-index: 2;
@@ -252,11 +267,9 @@ a {
   position: absolute;
   width: 60px;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    var(--color-gray-800) 0%,
-    var(--color-gray-500) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--color-gray-800) 0%,
+      var(--color-gray-500) 100%);
   bottom: -12px;
   left: 50%;
   transform: translateX(-50%) scaleX(0);
@@ -294,11 +307,9 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    var(--color-gray-800) 0%,
-    var(--color-gray-600) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--color-gray-800) 50%,
+      var(--color-gray-600) 100%);
   z-index: -1;
   transition: opacity 0.3s ease;
   opacity: 0;
@@ -316,7 +327,8 @@ a {
 
 @media (max-width: 768px) {
   .hero {
-    height: 50vh; /* Shorter on mobile */
+    height: 50vh;
+    /* Shorter on mobile */
   }
 
   .hero-content h1 {
@@ -327,6 +339,7 @@ a {
     font-size: 1rem;
   }
 }
+
 .navbar {
   background-color: var(--color-background-dark);
   color: var(--color-text-light);
@@ -334,11 +347,13 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Ensure navbar spans full width */
+  width: 100%;
+  /* Ensure navbar spans full width */
 }
 
 .logo {
-  margin-right: auto; /* Pushes logo to the left */
+  margin-right: auto;
+  /* Pushes logo to the left */
   display: flex;
   align-items: center;
 }
@@ -359,25 +374,28 @@ a {
   gap: 2rem;
   margin: 0;
   padding: 0;
-  flex-direction: row; /* Ensures horizontal alignment */
+  flex-direction: row;
+  /* Ensures horizontal alignment */
 }
 
 .navLinks li a {
   text-decoration: none;
-  color: var(--color-gray-300); /* Lighter grey for links */
+  color: var(--color-gray-300);
+  /* Lighter grey for links */
   transition: color 0.3s ease;
 }
 
 .navLinks li a:hover {
   color: var(--color-text-light);
 }
+
 body {
   display: flex;
   flex-direction: column;
 }
 
 main {
-  flex: 1 0 auto; /* Hace que el contenido principal ocupe el espacio disponible */
+  flex: 1 0 auto;
 }
 
 .footer {
@@ -385,14 +403,14 @@ main {
   color: var(--color-gray-200);
   padding: 1rem 2rem;
   text-align: center;
-  flex-shrink: 0; /* Evita que el footer se encoja */
-  margin-top: 2rem; /* Add some space above the footer */
+  flex-shrink: 0;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 /* Add this to your globals.css file */
 .featured-destinations-section {
   background-color: var(--color-gray-900);
@@ -443,11 +461,9 @@ main {
   position: absolute;
   width: 60px;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    var(--color-gray-800) 0%,
-    var(--color-gray-500) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--color-gray-800) 0%,
+      var(--color-gray-500) 100%);
   bottom: -12px;
   left: 50%;
   transform: translateX(-50%) scaleX(0);
@@ -494,11 +510,9 @@ main {
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--color-gray-800) 0%,
-    var(--color-gray-500) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--color-gray-800) 0%,
+      var(--color-gray-500) 100%);
   z-index: 2;
 }
 
@@ -555,12 +569,11 @@ h2 {
 
 /* Enhanced Why Choose Us Section */
 .why-choose-us {
-  padding: 6rem 0;
-  background: linear-gradient(
-    135deg,
-    var(--color-gray-100) 0%,
-    var(--color-gray-200) 100%
-  );
+  padding: 3rem;
+  height: 700px;
+  background: linear-gradient(135deg,
+      var(--color-gray-100) 0%,
+      var(--color-gray-200) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -571,7 +584,6 @@ h2 {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   background-image: url("/images/pattern-bg.svg");
   background-size: 400px;
   background-repeat: repeat;
@@ -595,15 +607,12 @@ h2 {
 }
 
 .why-choose-us h2::after {
-  content: "";
   position: absolute;
   width: 80px;
   height: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--color-gray-800) 0%,
-    var(--color-gray-500) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--color-gray-800) 0%,
+      var(--color-gray-500) 100%);
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
@@ -646,11 +655,9 @@ h2 {
   left: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(
-    90deg,
-    var(--color-gray-800) 0%,
-    var(--color-gray-500) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--color-gray-800) 0%,
+      var(--color-gray-500) 100%);
   z-index: 2;
 }
 
@@ -735,6 +742,7 @@ h2 {
     opacity: 0;
     transform: translateY(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -758,6 +766,7 @@ h2 {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -768,6 +777,7 @@ h2 {
     transform: translateX(50px);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -779,6 +789,7 @@ h2 {
     transform: translateX(-50px);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -811,14 +822,17 @@ h2 {
     padding: 2rem 1.5rem;
   }
 }
+
 .about-section {
-  padding: 0; /* Removed all padding to allow sections to span full width */
+  padding: 0;
+  /* Removed all padding to allow sections to span full width */
   position: relative;
   overflow: hidden;
 }
 
 .about-content {
-  max-width: 100%; /* Allow content to span full width */
+  max-width: 100%;
+  /* Allow content to span full width */
   margin: 0;
   position: relative;
   z-index: 2;
@@ -859,11 +873,9 @@ h2 {
   bottom: -10px;
   width: 80px;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    var(--color-gray-800) 0%,
-    var(--color-gray-500) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--color-gray-800) 0%,
+      var(--color-gray-500) 100%);
   border-radius: 2px;
 }
 
@@ -871,9 +883,10 @@ h2 {
 .company-story,
 .values-section,
 .team-section {
-  margin-bottom: 0; /* Remove bottom margin */
-  padding: 6rem 0; /* Increased vertical padding */
-  width: 100%; /* Ensure full width */
+  padding: 6rem 0;
+  /* Increased vertical padding */
+  width: 100%;
+  /* Ensure full width */
   position: relative;
   overflow: hidden;
   transition: background-color 0.5s ease;
@@ -890,11 +903,9 @@ h2 {
 
 /* section backgrounds with subtle patterns */
 .mission-vision {
-  background: linear-gradient(
-    180deg,
-    var(--color-gray-200) 0%,
-    var(--color-background-primary) 100%
-  );
+  background: linear-gradient(180deg,
+      var(--color-gray-200) 0%,
+      var(--color-background-primary) 100%);
   position: relative;
 }
 
@@ -911,11 +922,9 @@ h2 {
 }
 
 .company-story {
-  background: linear-gradient(
-    135deg,
-    var(--color-background-primary) 0%,
-    var(--color-gray-100) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--color-background-primary) 0%,
+      var(--color-gray-100) 100%);
   position: relative;
 }
 
@@ -932,11 +941,9 @@ h2 {
 }
 
 .values-section {
-  background: linear-gradient(
-    180deg,
-    var(--color-gray-200) 0%,
-    var(--color-background-primary) 100%
-  );
+  background: linear-gradient(180deg,
+      var(--color-gray-200) 0%,
+      var(--color-background-primary) 100%);
   position: relative;
 }
 
@@ -953,11 +960,116 @@ h2 {
 }
 
 .team-section {
-  background: linear-gradient(
-    135deg,
-    var(--color-background-primary) 0%,
-    var(--color-gray-100) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--color-background-primary) 0%,
+      var(--color-gray-100) 100%);
+  position: relative;
+}
+
+.team-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/subtle-pattern.svg");
+  opacity: 0.03;
+  z-index: 1;
+}
+
+/* Add some padding and improve text contrast */
+.mission-vision h2,
+.company-story h2,
+.values-section h2,
+.team-section h2 {
+  color: var(--color-text-primary);
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+.mission-vision h2:after,
+.company-story h2:after,
+.team-section .section-container {
+  opacity: 0;
+  animation: slideInLeft 0.8s 0.1s forwards;
+}
+
+/* Our values cards */
+.values-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.value-card {
+  flex: 1;
+  min-width: 240px;
+  max-width: calc(25% - 1rem);
+  min-height: 380px;
+  background: var(--color-background-primary);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 1px 8px 20px var(--color-shadow);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: valueCardAppear 0.5s forwards;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  will-change: transform, box-shadow;
+}
+
+.value-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--color-text-primary);
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.value-card p {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.values-section {
+  background: linear-gradient(180deg,
+      var(--color-gray-200) 0%,
+      var(--color-background-primary) 100%);
+  position: relative;
+}
+
+.values-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/subtle-pattern.svg");
+  opacity: 0.05;
+  z-index: 1;
+}
+
+.team-section {
+  background: linear-gradient(135deg,
+      var(--color-background-primary) 0%,
+      var(--color-gray-100) 100%);
   position: relative;
 }
 
@@ -997,11 +1109,9 @@ h2 {
   position: absolute;
   width: 60px;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    var(--color-gray-800) 0%,
-    var(--color-gray-500) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--color-gray-800) 0%,
+      var(--color-gray-500) 100%);
   bottom: -12px;
   left: 0;
   transform: scaleX(0);
@@ -1013,9 +1123,24 @@ h2 {
   from {
     transform: scaleX(0);
   }
+
   to {
     transform: scaleX(1);
   }
+}
+
+/* Specific centering for Services title */
+.values-section h2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.values-section h2::after {
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform-origin: center;
 }
 
 .mission-vision p,
@@ -1047,13 +1172,12 @@ h2 {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 5rem;
-  margin-top: 3.5rem;
+  gap: 25px;
 }
 
 .value-card {
   flex: 1;
-  min-width: 280px;
+  min-width: 240px;
   max-width: calc(25% - 1rem);
   min-height: 380px;
   background: var(--color-background-primary);
@@ -1093,11 +1217,9 @@ h2 {
   position: absolute;
   width: 40px;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    var(--color-gray-800) 0%,
-    var(--color-gray-500) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--color-gray-800) 0%,
+      var(--color-gray-500) 100%);
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -1117,11 +1239,9 @@ h2 {
   left: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(
-    90deg,
-    var(--color-gray-800) 0%,
-    var(--color-gray-500) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--color-gray-800) 0%,
+      var(--color-gray-500) 100%);
   z-index: 2;
 }
 
@@ -1137,6 +1257,7 @@ h2 {
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -1179,6 +1300,7 @@ h2 {
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -1258,11 +1380,9 @@ h2 {
   position: absolute;
   width: 60px;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    var(--color-gray-800) 0%,
-    var(--color-gray-500) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--color-gray-800) 0%,
+      var(--color-gray-500) 100%);
   bottom: -12px;
   left: 0;
   transform: scaleX(0);
@@ -1308,11 +1428,9 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    var(--color-gray-800) 0%,
-    var(--color-gray-600) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--color-gray-800) 0%,
+      var(--color-gray-600) 100%);
   z-index: -1;
   transition: opacity 0.3s ease;
   opacity: 0;
@@ -1360,6 +1478,7 @@ h2 {
   transform: scaleX(1);
   transform-origin: left;
 }
+
 .learn-more-btn:hover {
   background: var(--color-accent-hover);
 }
@@ -1516,7 +1635,8 @@ h2 {
 .carousel-track {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Change to flex-start instead of center */
+  justify-content: flex-start;
+  /* Change to flex-start instead of center */
   will-change: transform;
   margin: 0;
   width: 100%;
@@ -1561,7 +1681,8 @@ h2 {
 .carousel-track-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Change to flex-start */
+  justify-content: flex-start;
+  /* Change to flex-start */
   overflow: hidden;
   width: 100%;
   height: 450px;
@@ -1719,9 +1840,84 @@ h2 {
   0% {
     box-shadow: 0 0 5px var(--color-shadow);
   }
+
   50% {
     box-shadow: 0 0 15px var(--color-shadow-dark);
   }
+
+  100% {
+    box-shadow: 0 0 5px var(--color-shadow);
+  }
+}
+
+/* Carousel Navigation */
+.carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.carousel-button {
+  background: var(--color-accent);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 2px 8px var(--color-shadow);
+}
+
+.carousel-button:hover {
+  background: var(--color-accent-hover);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px var(--color-shadow-dark);
+}
+
+.carousel-button:active {
+  transform: scale(0.95);
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 0.8rem;
+  margin: 0 1rem;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-gray-400);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 1px 3px var(--color-shadow);
+}
+
+.carousel-dot.active {
+  background: var(--color-accent);
+  transform: scale(1.3);
+  box-shadow: 0 2px 5px var(--color-shadow);
+}
+
+/* Add a subtle glow effect to active elements */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px var(--color-shadow);
+  }
+
+  50% {
+    box-shadow: 0 0 15px var(--color-shadow-dark);
+  }
+
   100% {
     box-shadow: 0 0 5px var(--color-shadow);
   }

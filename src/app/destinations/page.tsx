@@ -28,7 +28,7 @@ interface ServiceCategory {
 const initialServiceCategories: ServiceCategory[] = [
   {
     id: 'traditional-tours',
-    title: 'Traditional Tours',
+    title: 'Tours Tradicionales',
     services: [
       {
         id: 'city-tour',
@@ -70,7 +70,7 @@ const initialServiceCategories: ServiceCategory[] = [
   },
   {
     id: 'traditional-vineyards',
-    title: 'Traditional Vineyards',
+    title: 'Viñedos Tradicionales',
     services: [
       {
         id: 'concha-y-toro',
@@ -124,7 +124,7 @@ const initialServiceCategories: ServiceCategory[] = [
 export default function Destinations() {
   // State for service data and loading status
   const [serviceCategories] = useState<ServiceCategory[]>(initialServiceCategories);
-  
+
   // Modal state
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -154,17 +154,17 @@ export default function Destinations() {
 
   // Manage focus when modal opens/closes
   const closeButtonRef = React.useRef<HTMLButtonElement>(null);
-  
+
   React.useEffect(() => {
     if (isModalOpen && closeButtonRef.current) {
       // Set focus to close button when modal opens
       closeButtonRef.current.focus();
     }
   }, [isModalOpen]);
-  
+
   // Store the previously focused element to restore focus when modal closes
   const previousFocusRef = React.useRef<HTMLElement | null>(null);
-  
+
   React.useEffect(() => {
     if (isModalOpen) {
       // Save the currently focused element before opening modal
@@ -211,14 +211,14 @@ export default function Destinations() {
                 <h2>{category.title}</h2>
                 <div className="service-cards-grid">
                   {category.services.map((service, index) => (
-                    <div 
-                      className="service-card" 
+                    <div
+                      className="service-card"
                       key={service.id}
                       style={{ '--card-index': index } as React.CSSProperties}
                     >
-                      <div 
-                        className="service-image" 
-                        style={{ 
+                      <div
+                        className="service-image"
+                        style={{
                           backgroundImage: `url(${service.thumbnailImage})`,
                           backgroundSize: 'cover',
                           backgroundPosition: 'center',
@@ -231,7 +231,7 @@ export default function Destinations() {
                       <div className="service-content">
                         <h3>{service.name}</h3>
                         <p>{service.description}</p>
-                        <button 
+                        <button
                           className="details-button"
                           onClick={() => openModal(service)}
                           aria-label={`View more details about ${service.name}`}
@@ -249,30 +249,30 @@ export default function Destinations() {
 
         {/* Service Detail Modal */}
         {isModalOpen && selectedService && (
-          <div 
-            className="modal-overlay" 
-            onClick={closeModal} 
-            role="dialog" 
-            aria-modal="true" 
+          <div
+            className="modal-overlay"
+            onClick={closeModal}
+            role="dialog"
+            aria-modal="true"
             aria-labelledby="modal-title"
           >
-            <div 
-              className="modal-content" 
+            <div
+              className="modal-content"
               onClick={(e: React.MouseEvent) => e.stopPropagation()}
             >
-              <button 
-                className="modal-close" 
-                onClick={closeModal} 
+              <button
+                className="modal-close"
+                onClick={closeModal}
                 ref={closeButtonRef}
                 aria-label="Close modal"
               >
                 <span aria-hidden="true">×</span>
-                <span className="sr-only">Close</span>
+                <span className="sr-only">Cerrar</span>
               </button>
               <div className="modal-image">
-                <img 
-                  src={selectedService.image} 
-                  alt={`${selectedService.name} tour`} 
+                <img
+                  src={selectedService.image}
+                  alt={`${selectedService.name} tour`}
                   loading="lazy"
                 />
                 <div className="modal-image-caption">
@@ -281,17 +281,17 @@ export default function Destinations() {
               </div>
               <div className="modal-details">
                 <h2 id="modal-title-mobile" className="mobile-only">{selectedService.name}</h2>
-                
+
                 <div className="modal-info">
-                  <h3>Overview</h3>
+                  <h3>Descripción General</h3>
                   <p>{selectedService.details}</p>
                 </div>
-                
+
                 <div className="modal-info">
                   <h3>Available Schedules</h3>
                   <p>{selectedService.schedules}</p>
                 </div>
-                
+
                 <div className="modal-highlights">
                   <h3>Highlights</h3>
                   <ul className="highlights-list">
@@ -301,10 +301,10 @@ export default function Destinations() {
                     <li>Flexible booking options</li>
                   </ul>
                 </div>
-                
+
                 <div className="modal-actions">
-                  <button 
-                    className="book-button" 
+                  <button
+                    className="book-button"
                     onClick={(e: React.MouseEvent) => {
                       e.preventDefault();
                       window.location.href = '/contact';

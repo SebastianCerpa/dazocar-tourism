@@ -3,6 +3,12 @@ import Footer from "./components/Footer";
 import Link from "next/link";
 import { AnimatedSection } from "./components/AnimatedSection";
 import CarouselComponent from "./components/CarouselComponent";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMapLocationDot,
+  faUserGear,
+  faLeaf,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
@@ -41,7 +47,7 @@ export default function Home() {
                     Descubre más sobre nosotros
                   </Link>
                   <Link href="/contact" className="contact-btn">
-                    Contact Us
+                    Contáctenos
                   </Link>
                 </div>
               </div>
@@ -78,32 +84,32 @@ export default function Home() {
                     icon: "/images/logo.png",
                     title: "Torres del Paine",
                     description:
-                      "Explore the majestic peaks and glaciers of Patagonia",
+                      "Explora los majestuosos picos y glaciares de la Patagonia",
                   },
                   {
                     image: "/images/desierto.jpg",
                     icon: "/images/logo.png",
-                    title: "Atacama Desert",
+                    title: "Desierto de Atacama",
                     description:
-                      "Discover the world driest desert and its starry skies",
+                      "Descubre el desierto más árido del mundo y sus cielos estrellados",
                   },
                   {
                     image: "/images/valparaiso.jpg",
                     icon: "/images/logo.png",
                     title: "Valparaíso",
-                    description: "Uncover the mysteries of the Moai statues",
+                    description: "Descubre los misterios de las estatuas Moai",
                   },
                   {
                     image: "/images/viñedos.jpg",
                     icon: "/images/logo.png",
                     title: "Tour Viñedos",
-                    description: "Taste world-class wines in scenic vineyards",
+                    description: "Degusta vinos de clase mundial en viñedos pintorescos",
                   },
                 ]}
               />
-                  <Link href="/destinations" className="learn-more-btn">
-                    Descubre más
-                  </Link>
+              <Link href="/destinations" className="learn-more-btn">
+                Descubre más
+              </Link>
             </AnimatedSection>
           </div>
         </div>
@@ -114,10 +120,7 @@ export default function Home() {
             <div className="features-grid">
               <div className="feature">
                 <div className="feature-icon">
-                  <img
-                    src="/images/icons/guide-icon.svg"
-                    alt="Guías Expertos"
-                  />
+                  <FontAwesomeIcon icon={faMapLocationDot} className="fa-icon" />
                 </div>
                 <h3>Guías locales Expertos</h3>
                 <p>
@@ -128,10 +131,7 @@ export default function Home() {
               </div>
               <div className="feature">
                 <div className="feature-icon">
-                  <img
-                    src="/images/icons/personalized-icon.svg"
-                    alt="Experiencia Personalizada"
-                  />
+                  <FontAwesomeIcon icon={faUserGear} className="fa-icon" />
                 </div>
                 <h3>Experiencia Personalizada</h3>
                 <p>Los tours son desarrollados de acuerdo a su necesidad</p>
@@ -139,10 +139,7 @@ export default function Home() {
               </div>
               <div className="feature">
                 <div className="feature-icon">
-                  <img
-                    src="/images/icons/sustainable-icon.svg"
-                    alt="Turismo Sustentable"
-                  />
+                  <FontAwesomeIcon icon={faLeaf} className="fa-icon" />
                 </div>
                 <h3>Turismo Sustentable</h3>
                 <p>

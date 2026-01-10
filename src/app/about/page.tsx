@@ -13,17 +13,17 @@ const AboutPage: React.FC = () => {
         <section className="company-story">
           <div className="section-container story-content">
             <div className="story-text">
-              <h2>Our Story</h2>
+              <h2>Nuestra Historia</h2>
               <p>
-                Founded in 2010 by a group of passionate Chilean travel
-                enthusiasts, Chile Tourism began as a small initiative to
-                highlight the lesser-known wonders of our country. Over the
-                years, we have grown into a leading tourism platform, helping
-                thousands of travelers discover the magic of Chile from the
-                otherworldly landscapes of the Atacama Desert to the pristine
-                wilderness of Patagonia. Our journey has been guided by a deep
-                love for Chile natural beauty and cultural heritage, and a
-                commitment to sharing it with the world in a responsible way.
+                Fundada en 2010 por un grupo de apasionados entusiastas chilenos
+                de los viajes, Chile Tourism comenzó como una pequeña iniciativa para
+                destacar las maravillas menos conocidas de nuestro país. A lo largo de
+                los años, hemos crecido hasta convertirnos en una plataforma turística líder,
+                ayudando a miles de viajeros a descubrir la magia de Chile, desde los
+                paisajes de otro mundo del Desierto de Atacama hasta la naturaleza
+                prístina de la Patagonia. Nuestro viaje ha sido guiado por un profundo
+                amor por la belleza natural y el patrimonio cultural de Chile, y un
+                compromiso de compartirlo con el mundo de manera responsable.
               </p>
             </div>
             <div className="story-image">
@@ -41,15 +41,15 @@ const AboutPage: React.FC = () => {
             <section className="mission-vision">
               <div className="section-container story-content">
                 <div className="story-text">
-                  <h2>Our Mission</h2>
+                  <h2>Nuestra Misión</h2>
                   <p>
-                    At Chile Tourism, our mission is to showcase the incredible
-                    diversity and beauty of Chile to the world. We strive to
-                    promote sustainable tourism that respects local communities
-                    and preserves the natural environment. Through authentic
-                    experiences and responsible travel, we aim to create
-                    meaningful connections between visitors and Chile rich
-                    culture and landscapes.
+                    En Chile Tourism, nuestra misión es mostrar la increíble
+                    diversidad y belleza de Chile al mundo. Nos esforzamos por
+                    promover un turismo sostenible que respete las comunidades locales
+                    y preserve el medio ambiente natural. A través de experiencias
+                    auténticas y viajes responsables, buscamos crear
+                    conexiones significativas entre los visitantes y la rica
+                    cultura y paisajes de Chile.
                   </p>
                 </div>
                 <div className="story-image">
@@ -66,7 +66,7 @@ const AboutPage: React.FC = () => {
           <AnimatedSection>
             <section className="values-section">
               <div className="section-container">
-                <h2>Our Values</h2>
+                <h2>Nuestros Valores</h2>
                 <div className="values-grid">
                   <div className="value-card">
                     <div className="value-icon">
@@ -75,10 +75,10 @@ const AboutPage: React.FC = () => {
                         alt="Sustainability icon"
                       />
                     </div>
-                    <h3>Sustainability</h3>
+                    <h3>Sostenibilidad</h3>
                     <p>
-                      We promote eco-friendly tourism practices that preserve
-                      Chile natural environments for future generations.
+                      Promovemos prácticas turísticas ecológicas que preservan
+                      los entornos naturales de Chile para las generaciones futuras.
                     </p>
                     <div className="value-image">
                       <img
@@ -94,10 +94,10 @@ const AboutPage: React.FC = () => {
                         alt="Authenticity icon"
                       />
                     </div>
-                    <h3>Authenticity</h3>
+                    <h3>Autenticidad</h3>
                     <p>
-                      We showcase the real Chile, connecting visitors with
-                      genuine local experiences and traditions.
+                      Mostramos el Chile real, conectando a los visitantes con
+                      experiencias y tradiciones locales genuinas.
                     </p>
                     <div className="value-image">
                       <img
@@ -110,10 +110,10 @@ const AboutPage: React.FC = () => {
                     <div className="value-icon">
                       <img src="/images/respect-icon.svg" alt="Respect icon" />
                     </div>
-                    <h3>Respect</h3>
+                    <h3>Respeto</h3>
                     <p>
-                      We honor the diverse cultures, communities, and ecosystems
-                      that make Chile unique.
+                      Honramos las diversas culturas, comunidades y ecosistemas
+                      que hacen de Chile un lugar único.
                     </p>
                     <div className="value-image">
                       <img
@@ -130,13 +130,13 @@ const AboutPage: React.FC = () => {
           <AnimatedSection>
             <section className="team-section">
               <div className="section-container">
-                <h2>Our Team</h2>
+                <h2>Nuestro Equipo</h2>
                 <p>
-                  Our diverse team of travel experts, local guides, and tourism
-                  professionals shares a common passion: showcasing the best of
-                  Chile to the world. With deep knowledge of the country
-                  geography, culture, and hidden gems, we are dedicated to
-                  creating unforgettable experiences for every traveler.
+                  Nuestro diverso equipo de expertos en viajes, guías locales y
+                  profesionales del turismo comparten una pasión común: mostrar lo mejor de
+                  Chile al mundo. Con un profundo conocimiento de la
+                  geografía, cultura y joyas ocultas del país, estamos dedicados a
+                  crear experiencias inolvidables para cada viajero.
                 </p>
               </div>
             </section>

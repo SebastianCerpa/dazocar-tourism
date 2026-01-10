@@ -34,8 +34,8 @@
 .service-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 1rem;
+  margin-top: 5rem;
 }
 
 /* Service Card */
@@ -58,6 +58,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -70,6 +71,7 @@
 }
 
 .service-image {
+  width: 100%;
   height: 200px;
   background-size: cover;
   background-position: center;
@@ -89,12 +91,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
   transition: background 0.3s ease;
 }
 
 .service-card:hover .service-image-overlay {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
 }
 
 .service-content {
@@ -157,7 +159,7 @@
   background-color: var(--color-background-primary);
   border-radius: 10px;
   width: 100%;
-  max-width: 1100px; 
+  max-width: 1100px;
   max-height: 100vh;
   overflow-y: auto;
   display: flex;
@@ -172,6 +174,7 @@
     opacity: 0;
     transform: scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -203,7 +206,8 @@
 
 .modal-image {
   width: 100%;
-  height: 400px; /* Increased from 350px */
+  height: 400px;
+  /* Increased from 350px */
   overflow: hidden;
   position: relative;
 }
@@ -225,14 +229,15 @@
     flex-direction: column;
     max-height: 85vh;
   }
-  
+
   .modal-image {
     height: 250px;
   }
 }
 
 .modal-details {
-  padding: 2.5rem; /* Increased from 2rem */
+  padding: 2.5rem;
+  /* Increased from 2rem */
 }
 
 .modal-details h2 {
@@ -321,16 +326,19 @@
 @media (min-width: 768px) {
   .modal-content {
     flex-direction: row;
-    max-height: 85vh; /* Increased from 80vh */
+    max-height: 85vh;
+    /* Increased from 80vh */
   }
-  
+
   .modal-image {
-    width: 45%; /* Increased from 40% */
+    width: 45%;
+    /* Increased from 40% */
     height: auto;
   }
-  
+
   .modal-details {
-    width: 55%; /* Adjusted from 60% */
+    width: 55%;
+    /* Adjusted from 60% */
     overflow-y: auto;
   }
 }
@@ -339,13 +347,15 @@
   .service-cards-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
-  
+
   .modal-content {
-    max-height: 85vh; /* Increased from 80vh */
+    max-height: 85vh;
+    /* Increased from 80vh */
   }
-  
+
   .modal-image {
-    height: 250px; /* Increased from 200px */
+    height: 250px;
+    /* Increased from 200px */
   }
 }
 
@@ -353,15 +363,15 @@
   .service-cards-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .modal-overlay {
     padding: 1rem;
   }
-  
+
   .modal-details {
     padding: 1.5rem;
   }
-  
+
   .modal-details h2 {
     font-size: 1.5rem;
   }

@@ -9,39 +9,38 @@ import { AnimatedSection } from "../components/AnimatedSection";
 const services = [
   {
     id: 1,
-    name: "Personalized Service",
-    category: "Premium",
+    name: "Servicio Personalizado",
     description:
-      "Tailored travel experiences designed specifically for your preferences and interests. Our personalized service includes private guides, customized itineraries, and exclusive access to unique locations throughout Chile.",
-    image: "/images/serv-personalizado.png", 
-    features: ["Private Guides", "Custom Itineraries", "Luxury Transportation"],
+      "Experiencias de viaje personalizadas diseñadas específicamente para tus preferencias e intereses. Nuestro servicio personalizado incluye guías privados, itinerarios personalizados y acceso exclusivo a ubicaciones únicas en todo Chile.",
+    image: "/images/serv-personalizado.png",
+    features: ["Guías Privados", "Itinerarios Personalizados", "Transporte de Lujo"],
   },
   {
     id: 2,
-    name: "Standardized Service",
+    name: "Servicio Estándar",
     category: "Classic",
     description:
-      "Our most popular option offering well-planned group tours to Chile's iconic destinations. These services follow carefully crafted itineraries with professional guides and comfortable accommodations.",
-    image: "/images/serv-standar.png", 
-    features: ["Group Tours", "Fixed Itineraries", "Professional Guides"],
+      "Nuestra opción más popular que ofrece tours grupales bien planificados a los destinos icónicos de Chile. Estos servicios siguen itinerarios cuidadosamente elaborados con guías profesionales y alojamientos cómodos.",
+    image: "/images/serv-standar.png",
+    features: ["Tours Grupales", "Itinerarios Fijos", "Guías Profesionales"],
   },
   {
     id: 3,
-    name: "Family Service",
+    name: "Servicio Familiar",
     category: "Specialized",
     description:
-      "Family-friendly adventures designed with children and parents in mind. These services include age-appropriate activities, family accommodations, and guides experienced in working with children of all ages.",
-    image: "/images/serv-family.png", 
-    features: ["Kid-Friendly Activities", "Family Accommodations", "Educational Experiences"],
+      "Aventuras familiares diseñadas pensando en niños y padres. Estos servicios incluyen actividades apropiadas para cada edad, alojamiento familiar y guías con experiencia trabajando con niños de todas las edades.",
+    image: "/images/serv-family.png",
+    features: ["Actividades para Niños", "Alojamiento Familiar", "Experiencias Educativas"],
   },
   {
     id: 4,
-    name: "Business Service",
+    name: "Servicio Empresarial",
     category: "Corporate",
     description:
-      "Professional services for corporate clients including team-building retreats, conference planning, and executive tours. We handle all logistics while maintaining the highest standards of professionalism and comfort.",
-    image: "/images/serv-business.jpg", 
-    features: ["Corporate Retreats", "Conference Planning", "Executive Transportation"],
+      "Servicios profesionales para clientes corporativos que incluyen retiros de team-building, planificación de conferencias y tours ejecutivos. Manejamos toda la logística mientras mantenemos los más altos estándares de profesionalismo y comodidad.",
+    image: "/images/serv-business.jpg",
+    features: ["Retiros Corporativos", "Planificación de Conferencias", "Transporte Ejecutivo"],
   },
 ];
 
@@ -55,21 +54,21 @@ export default function Services() {
           <section className="services-intro">
             <div className="section-container story-content">
               <div className="story-text">
-                <h2>Explore Chile With Us</h2>
+                <h2>Explora Chile Con Nosotros</h2>
                 <p>
-                  At Dazocar, we offer a wide range of tourism services designed
-                  to showcase the best of Chile diverse landscapes and rich
-                  cultural heritage. From the otherworldly Atacama Desert in the
-                  north to the pristine wilderness of Patagonia in the south,
-                  our expert-guided tours and customized travel experiences
-                  ensure unforgettable adventures for every type of traveler.
+                  En Dazocar, ofrecemos una amplia gama de servicios turísticos diseñados
+                  para mostrar lo mejor de los diversos paisajes de Chile y su rica
+                  herencia cultural. Desde el desierto de Atacama de otro mundo en el
+                  norte hasta la naturaleza prístina de la Patagonia en el sur,
+                  nuestros tours guiados por expertos y experiencias de viaje personalizadas
+                  aseguran aventuras inolvidables para cada tipo de viajero.
                 </p>
                 <p>
-                  Whether you are seeking adrenaline-pumping outdoor activities,
-                  cultural immersion, culinary delights, or simply the chance to
-                  witness breathtaking natural wonders, our team of local
-                  experts will craft the perfect Chilean experience tailored to
-                  your interests and preferences.
+                  Ya sea que busques actividades al aire libre llenas de adrenalina,
+                  inmersión cultural, delicias culinarias, o simplemente la oportunidad de
+                  presenciar maravillas naturales impresionantes, nuestro equipo de
+                  expertos locales creará la experiencia chilena perfecta adaptada a
+                  tus intereses y preferencias.
                 </p>
               </div>
               <div className="story-image">
@@ -86,10 +85,10 @@ export default function Services() {
         <AnimatedSection>
           <section className="values-section">
             <div className="section-container">
-              <h2>Our Services</h2>
+              <h2>Nuestros Servicios</h2>
               <p className="section-description">
-                We offer a range of specialized services to meet the needs of every traveler,
-                from personalized luxury experiences to family-friendly adventures
+                Ofrecemos una gama de servicios especializados para satisfacer las necesidades de cada viajero,
+                desde experiencias de lujo personalizadas hasta aventuras familiares
               </p>
               <div className="values-grid">
                 {services.map((service) => (
@@ -115,13 +114,13 @@ export default function Services() {
         <AnimatedSection>
           <section className="team-section">
             <div className="section-container">
-              <h2>Ready to Experience Chile?</h2>
+              <h2>¿Listo para Experimentar Chile?</h2>
               <p>
-                Contact our travel experts today to start planning your perfect
-                Chilean adventure. We will help you create a customized
-                itinerary that matches your interests, timeframe, and budget.
+                Contacta a nuestros expertos en viajes hoy para comenzar a planificar tu
+                aventura chilena perfecta. Te ayudaremos a crear un
+                itinerario personalizado que se ajuste a tus intereses, horario y presupuesto.
               </p>
-              <button className="cta-button">Contact Us</button>
+              <button className="cta-button">Contáctenos</button>
             </div>
           </section>
         </AnimatedSection>
