@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('./typography-tokens.css');
 
 :root {
   /* Primary Colors */
@@ -50,19 +51,58 @@ a {
   font-family: 'Montserrat', sans-serif;
 }
 
-p {
+/* Global Typography Styles */
+h1 {
   font-family: 'Montserrat', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-  font-variation-settings:
-    "GRAD" 0;
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 h2 {
   font-family: 'Montserrat', sans-serif;
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+}
+
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+}
+
+h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--font-size-h5);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-snug);
+}
+
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--font-size-h6);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-snug);
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
   font-optical-sizing: auto;
-  font-weight: 200;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body-base);
+  line-height: var(--line-height-relaxed);
+  font-style: normal;
 }
 
 
@@ -137,9 +177,9 @@ h2 {
 }
 
 .page-header .header-content h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  letter-spacing: -0.5px;
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-tight);
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
@@ -159,7 +199,7 @@ h2 {
 }
 
 .page-header .header-content p {
-  font-size: 1.1rem;
+  font-size: var(--font-size-body-lg);
   max-width: 700px;
   margin: 1rem auto 0;
   color: var(--color-gray-300);
@@ -201,8 +241,8 @@ h2 {
 }
 
 .story-text p {
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-relaxed);
   color: var(--color-text-secondary);
 }
 
@@ -254,7 +294,8 @@ h2 {
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-light);
   margin-bottom: 1.5rem;
   text-shadow: 2px 2px 4px var(--color-shadow-dark);
@@ -278,7 +319,7 @@ h2 {
 }
 
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: var(--font-size-body-lead);
   color: var(--color-gray-200);
   margin-bottom: 1.5rem;
   max-width: 700px;
@@ -451,9 +492,9 @@ main {
   position: relative;
   display: inline-block;
   margin-bottom: 2.5rem;
-  font-size: 2.5rem;
-  font-weight: 600;
-  letter-spacing: -0.5px;
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 .featured-destinations h2::after {
@@ -473,8 +514,8 @@ main {
 
 .featured-destinations p {
   color: var(--color-gray-200);
-  line-height: 1.8;
-  font-size: 1.1rem;
+  line-height: var(--line-height-loose);
+  font-size: var(--font-size-body-lg);
   max-width: 800px;
   margin-bottom: 2rem;
   text-align: center;
@@ -564,7 +605,7 @@ h2 {
   text-align: center;
   margin-bottom: 2rem;
   color: var(--color-text-primary);
-  font-size: 2.5rem;
+  font-size: var(--font-size-h2);
 }
 
 /* Enhanced Why Choose Us Section */
@@ -597,7 +638,7 @@ h2 {
 }
 
 .why-choose-us h2 {
-  font-size: 2.8rem;
+  font-size: var(--font-size-h2);
   margin-bottom: 1.5rem;
   position: relative;
   display: inline-block;
@@ -702,7 +743,7 @@ h2 {
 }
 
 .feature h3 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h3);
   margin-bottom: 1rem;
   color: var(--color-text-primary);
   position: relative;
@@ -722,8 +763,8 @@ h2 {
 
 .feature p {
   color: var(--color-text-secondary);
-  line-height: 1.7;
-  font-size: 1rem;
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-body-base);
 }
 
 .feature-number {
@@ -809,7 +850,7 @@ h2 {
   }
 
   .why-choose-us h2 {
-    font-size: 2.2rem;
+    font-size: var(--font-size-h2-mobile);
   }
 
   .features-grid {
@@ -1043,7 +1084,7 @@ h2 {
 
 .value-card p {
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
   margin-bottom: 1.2rem;
 }
 

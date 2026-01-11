@@ -14,18 +14,18 @@
   text-align: center;
   max-width: 800px;
   margin: 0 auto 3rem;
-  font-size: 1.1rem;
+  font-size: var(--font-size-body-lg);
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
 }
 
 /* Service category label */
 .destination-region {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: var(--font-size-label);
   color: var(--color-accent);
   margin-bottom: 0.4rem;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   background-color: rgba(var(--color-accent-rgb), 0.1);
   padding: 0.2rem 0.5rem;
   border-radius: 3px;
@@ -41,7 +41,7 @@
 
 .activity-tag {
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: var(--font-size-tag);
   background-color: var(--color-gray-200);
   color: var(--color-text-primary);
   padding: 0.2rem 0.5rem;
@@ -87,7 +87,7 @@
     var(--color-accent-dark) 100%
   );
   color: white;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   padding: 0.8rem 2rem;
   border-radius: 30px;
   margin-top: 1.5rem;

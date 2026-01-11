@@ -14,8 +14,8 @@
   text-align: center;
   margin-bottom: 3rem;
   position: relative;
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
 }
 
@@ -108,8 +108,8 @@
 }
 
 .service-content h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
   margin-bottom: 0.75rem;
   color: var(--color-text-primary);
 }
@@ -117,7 +117,7 @@
 .service-content p {
   color: var(--color-text-secondary);
   margin-bottom: 1.5rem;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
   flex-grow: 1;
 }
 
@@ -127,7 +127,7 @@
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   align-self: flex-start;
@@ -241,8 +241,8 @@
 }
 
 .modal-details h2 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: var(--font-size-h2-mobile);
+  font-weight: var(--font-weight-bold);
   margin-bottom: 1.5rem;
   color: var(--color-text-primary);
 }
@@ -280,8 +280,8 @@
   border: none;
   padding: 0.85rem 1.75rem;
   border-radius: 4px;
-  font-weight: 600;
-  font-size: 1.1rem;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-button-lg);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -311,14 +311,14 @@
 }
 
 .modal-info h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: var(--font-size-h5);
+  font-weight: var(--font-weight-semibold);
   margin-bottom: 0.5rem;
   color: var(--color-accent);
 }
 
 .modal-info p {
-  line-height: 1.8;
+  line-height: var(--line-height-loose);
   color: var(--color-text-secondary);
 }
 
