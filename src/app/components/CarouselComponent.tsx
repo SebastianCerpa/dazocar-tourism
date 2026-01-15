@@ -84,15 +84,7 @@ export default function CarouselComponent({
   // Observer para detectar visibilidad
   const observerRef = useRef<IntersectionObserver | null>(null);
 
-  // Manejar el caso de un array vacío
-  if (!slides || slides.length === 0) {
-    return <div className="carousel-empty">No hay diapositivas disponibles</div>;
-  }
-
-  // Create an array with clones at both ends for infinite scrolling
-  const extendedSlides = [...slides, ...slides, ...slides] as SlideItem[];
-
-  // Función para calcular el ancho de las diapositivas
+  // Función para calcular el ancho de las diapositivas - MUST be before conditional return
   const calculateSlideWidth = useCallback(() => {
     if (carouselRef.current) {
       const containerWidth = carouselRef.current.offsetWidth;
@@ -106,14 +98,72 @@ export default function CarouselComponent({
     }
   }, []);
 
-  // Función para calcular el ancho de las diapositivas
-  const calculateSlideWidth = useCallback(() => {
-    if (carouselRef.current) {
-      const containerWidth = carouselRef.current.offsetWidth;
-      const visibleSlides = window.innerWidth >= 1200 ? 3 : window.innerWidth >= 768 ? 2 : 1;
-      setSlideWidth((containerWidth - (visibleSlides - 1) * 5) / visibleSlides);
+  // Manejar el caso de un array vacío - AFTER all hooks
+  if (!slides || slides.length === 0) {
+    return <div className="carousel-empty">No hay diapositivas disponibles</div>;
+  }
+
+  // Create an array with clones at both ends for infinite scrolling
+  const extendedSlides = [...slides, ...slides, ...slides] as SlideItem[];
+
+  const stopAutoplay = () => {
+    if (autoplayTimerRef.current) {
+      clearInterval(autoplayTimerRef.current);
+      autoplayTimerRef.current = null;
     }
-  }, []);
+  };
+
+  const cleanupAllTimeouts = () => {
+    stopAutoplay();
+    if (jumpTimeoutRef.current) {
+      clearTimeout(jumpTimeoutRef.current);
+      jumpTimeoutRef.current = null;
+    }
+    if (transitionTimeoutRef.current) {
+      clearTimeout(transitionTimeoutRef.current);
+      transitionTimeoutRef.current = null;
+    }
+  };
+
+  // handleNext sin llamar a startAutoplay
+  const handleNext = () => {
+    if (isTransitioning) return;
+    setCurrentIndex((prev) => prev + 1);
+  };
+
+  const handlePrev = () => {
+    if (isTransitioning) return;
+    setCurrentIndex((prev) => prev - 1);
+  };
+
+  const startAutoplay = () => {
+    stopAutoplay();
+    autoplayTimerRef.current = setInterval(() => {
+      if (!isDragging && !isTransitioning) {
+        handleNext();
+      }
+    }, autoplaySpeed);
+  };
+
+  // Función para programar un salto con transición
+  const scheduleJump = (newIndex: number) => {
+    if (jumpTimeoutRef.current) {
+      clearTimeout(jumpTimeoutRef.current);
+    }
+    
+    jumpTimeoutRef.current = setTimeout(() => {
+      setIsTransitioning(true);
+      setCurrentIndex(newIndex);
+      
+      if (transitionTimeoutRef.current) {
+        clearTimeout(transitionTimeoutRef.current);
+      }
+      
+      transitionTimeoutRef.current = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 50);
+    }, 500);
+  };
 
   useEffect(() => {
     setIsClient(true);
@@ -153,7 +203,7 @@ export default function CarouselComponent({
     return () => {
       stopAutoplay();
     };
-  }, [isVisible, autoplaySpeed]);
+  }, [isVisible, autoplaySpeed, isDragging, isTransitioning]);
 
   // Manejo de limpieza al desmontar
   useEffect(() => {
@@ -162,34 +212,7 @@ export default function CarouselComponent({
     };
   }, []);
 
-  // handleNext sin llamar a startAutoplay
-  const handleNext = useCallback(() => {
-    if (isTransitioning) return;
-    setCurrentIndex((prev) => prev + 1);
-  }, [isTransitioning]);
-
-  const stopAutoplay = () => {
-    if (autoplayTimerRef.current) {
-      clearInterval(autoplayTimerRef.current);
-      autoplayTimerRef.current = null;
-    }
-  };
-
-  // startAutoplay recibe la función que debe ejecutar
-  const startAutoplay = useCallback(
-    (nextFn: () => void) => {
-      stopAutoplay();
-      autoplayTimerRef.current = setInterval(() => {
-        if (!isDragging && !isTransitioning) {
-          nextFn();
-        }
-      }, autoplaySpeed);
-    },
-    [isDragging, isTransitioning, autoplaySpeed]
-  );
-
-  // En useEffect y otros lugares, llama startAutoplay(() => handleNext())
-  // Control de autoplay basado en visibilidad
+  // Handle the infinite scroll effect
   useEffect(() => {
     if (!isClient || isTransitioning) return;
 
@@ -203,69 +226,11 @@ export default function CarouselComponent({
     }
   }, [currentIndex, isClient, slides.length, isTransitioning]);
 
-  // Función para programar un salto con transición
-  const scheduleJump = useCallback((newIndex: number) => {
-    if (jumpTimeoutRef.current) {
-      clearTimeout(jumpTimeoutRef.current);
-    }
-    
-    jumpTimeoutRef.current = setTimeout(() => {
-      setIsTransitioning(true);
-      setCurrentIndex(newIndex);
-      
-      if (transitionTimeoutRef.current) {
-        clearTimeout(transitionTimeoutRef.current);
-      }
-      
-      transitionTimeoutRef.current = setTimeout(() => {
-        setIsTransitioning(false);
-      }, 50);
-    }, 500);
-  }, []);
-
-  const cleanupAllTimeouts = () => {
-    if (autoplayTimerRef.current) {
-      clearInterval(autoplayTimerRef.current);
-      autoplayTimerRef.current = null;
-    }
-    if (jumpTimeoutRef.current) {
-      clearTimeout(jumpTimeoutRef.current);
-      jumpTimeoutRef.current = null;
-    }
-    if (transitionTimeoutRef.current) {
-      clearTimeout(transitionTimeoutRef.current);
-      transitionTimeoutRef.current = null;
-    }
-  };
-
-  const startAutoplay = useCallback(() => {
-    stopAutoplay();
-    
-    autoplayTimerRef.current = setInterval(() => {
-      if (!isDragging && !isTransitioning) {
-        handleNext();
-      }
-    }, autoplaySpeed);
-  }, [isDragging, isTransitioning, autoplaySpeed]);
-
-  const stopAutoplay = () => {
-    if (autoplayTimerRef.current) {
-      clearInterval(autoplayTimerRef.current);
-      autoplayTimerRef.current = null;
-    }
-  };
-
-  const handlePrev = () => {
-    if (isTransitioning) return;
-    setCurrentIndex((prev) => prev - 1);
-    startAutoplay(handleNext); // Reset autoplay timer
-  };
-
   const handleDotClick = (index: number) => {
     if (isTransitioning) return;
     // Map the dot index to the middle set of slides
     setCurrentIndex(slides.length + index);
-    startAutoplay(handleNext); // Reset autoplay timer
+    startAutoplay(); // Reset autoplay timer
   };
 
   // Handlers de teclado para accesibilidad
@@ -273,21 +238,11 @@ export default function CarouselComponent({
     switch (e.key) {
       case "ArrowLeft":
         handlePrev();
+        startAutoplay();
         break;
       case "ArrowRight":
         handleNext();
-        break;
-    }
-  };
-
-  // Handlers de teclado para accesibilidad
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    switch (e.key) {
-      case 'ArrowLeft':
-        handlePrev();
-        break;
-      case 'ArrowRight':
-        handleNext();
+        startAutoplay();
         break;
     }
   };
@@ -323,7 +278,7 @@ export default function CarouselComponent({
 
     setIsDragging(false);
     setDragOffset(0);
-    startAutoplay(handleNext);
+    startAutoplay();
   };
 
   // Calculate transform based on current index and drag offset
@@ -336,7 +291,7 @@ export default function CarouselComponent({
     const centerOffset = (containerWidth - totalSlideWidth) / 2;
 
     const baseTransform = -currentIndex * totalSlideWidth + centerOffset;
-    const dragTransform = isDragging ? dragOffset : 0; // Corregido de 1 a 0
+    const dragTransform = isDragging ? dragOffset : 0;
     
     return `translateX(${baseTransform + dragTransform}px)`;
   };
@@ -350,13 +305,6 @@ export default function CarouselComponent({
     }
     return normalizedIndex;
   };
-
-  // Ahora el return condicional
-  if (!slides?.length) {
-    return (
-      <div className="carousel-empty">No hay diapositivas disponibles</div>
-    );
-  }
 
   return (
     <div 
@@ -399,7 +347,7 @@ export default function CarouselComponent({
         <div className="carousel-nav" aria-label="Controles de carrusel">
           <button 
             className="carousel-button" 
-            onClick={handlePrev}
+            onClick={() => { handlePrev(); startAutoplay(); }}
             aria-label="Diapositiva anterior"
           >
             ←
@@ -424,7 +372,7 @@ export default function CarouselComponent({
           
           <button 
             className="carousel-button" 
-            onClick={handleNext}
+            onClick={() => { handleNext(); startAutoplay(); }}
             aria-label="Siguiente diapositiva"
           >
             →

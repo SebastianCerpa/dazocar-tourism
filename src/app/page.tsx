@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Link from "next/link";
@@ -14,39 +14,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
-  const [featuredDestinations, setFeaturedDestinations] = useState<
-    FeaturedDestination[]
-  >([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const [isMounted, setIsMounted] = useState(false);
-
-  const fetchFeaturedDestinations = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await fetch("/api/featured-destinations");
-      if (!response.ok) {
-        throw new Error("Failed to fetch featured destinations");
-      }
-      const data = await response.json();
-      setFeaturedDestinations(data.data);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred");
-    } finally {
-      setLoading(false);
-    }
-  }, []);
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
-
-  useEffect(() => {
-    if (isMounted) {
-      fetchFeaturedDestinations();
-    }
-  }, [fetchFeaturedDestinations, isMounted]);
 
   return (
     <>

@@ -8,8 +8,18 @@ import Navbar from "../components/Navbar";
 import { AnimatedSection } from "../components/AnimatedSection";
 import Image from "next/image";
 
+// Service interface
+interface Service {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  features?: string[];
+  category?: string;
+}
+
 // Sample service data - in a real app, this would come from an API or CMS
-const services = [
+const defaultServices: Service[] = [
   {
     id: 1,
     name: "Servicio Personalizado",
@@ -48,8 +58,8 @@ const services = [
 ];
 
 export default function Services() {
-  const [services, setServices] = useState<Service[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [services, setServices] = useState<Service[]>(defaultServices);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -58,14 +68,18 @@ export default function Services() {
 
   const fetchServices = async () => {
     try {
+      setLoading(true);
       const response = await fetch("/api/services");
       if (!response.ok) {
         throw new Error("Failed to fetch services");
       }
       const data = await response.json();
-      setServices(data.data);
+      if (data.data && data.data.length > 0) {
+        setServices(data.data);
+      }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred");
+      // Use default services on error, don't show error state
+      console.error("Failed to fetch services, using defaults:", err);
     } finally {
       setLoading(false);
     }
