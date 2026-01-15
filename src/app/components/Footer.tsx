@@ -8,7 +8,10 @@ const Footer: React.FC = () => {
       <div className={`container ${styles["footer-container"]}`}>
         <div className={styles["footer-section"]}>
           <h3 className={styles["footer-heading"]}>Chile Executive Tours</h3>
-          <p className={styles["footer-text"]}>Descubre los paisajes más diversos de Sudamérica con nuestros tours personalizados y guías expertos locales.</p>
+          <p className={styles["footer-text"]}>
+            Descubre los paisajes más diversos de Sudamérica con nuestros tours
+            personalizados y guías expertos locales.
+          </p>
         </div>
 
         <div className={styles["footer-section"]}>
@@ -25,9 +28,15 @@ const Footer: React.FC = () => {
         <div className={styles["footer-section"]}>
           <h3 className={styles["footer-heading"]}>Contacto</h3>
           <address className={styles["footer-contact"]}>
-            <p><strong>Dirección:</strong> Av. Apoquindo 123, Santiago, Chile</p>
-            <p><strong>Email:</strong> info@chileexecutivetours.com</p>
-            <p><strong>Teléfono:</strong> +56 9 1234 5678</p>
+            <p>
+              <strong>Dirección:</strong> Av. Apoquindo 123, Santiago, Chile
+            </p>
+            <p>
+              <strong>Email:</strong> info@chileexecutivetours.com
+            </p>
+            <p>
+              <strong>Teléfono:</strong> +56 9 1234 5678
+            </p>
           </address>
         </div>
 
@@ -52,7 +61,10 @@ const Footer: React.FC = () => {
 
       <div className={styles["footer-bottom"]}>
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} Chile Executive Tours. Todos los derechos reservados.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Chile Executive Tours. Todos los
+            derechos reservados.
+          </p>
         </div>
       </div>
     </footer>

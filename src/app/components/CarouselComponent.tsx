@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useEffect, useState, useRef, memo, useCallback } from 'react';
 
@@ -90,7 +90,21 @@ export default function CarouselComponent({
   }
 
   // Create an array with clones at both ends for infinite scrolling
-  const extendedSlides = [...slides, ...slides, ...slides];
+  const extendedSlides = [...slides, ...slides, ...slides] as SlideItem[];
+
+  // Función para calcular el ancho de las diapositivas
+  const calculateSlideWidth = useCallback(() => {
+    if (carouselRef.current) {
+      const containerWidth = carouselRef.current.offsetWidth;
+      let visibleSlides = 1;
+      if (window.innerWidth >= 1200) {
+        visibleSlides = 3;
+      } else if (window.innerWidth >= 768) {
+        visibleSlides = 2;
+      }
+      setSlideWidth((containerWidth - (visibleSlides - 1) * 5) / visibleSlides);
+    }
+  }, []);
 
   // Función para calcular el ancho de las diapositivas
   const calculateSlideWidth = useCallback(() => {
@@ -148,7 +162,34 @@ export default function CarouselComponent({
     };
   }, []);
 
-  // Handle the infinite scroll effect
+  // handleNext sin llamar a startAutoplay
+  const handleNext = useCallback(() => {
+    if (isTransitioning) return;
+    setCurrentIndex((prev) => prev + 1);
+  }, [isTransitioning]);
+
+  const stopAutoplay = () => {
+    if (autoplayTimerRef.current) {
+      clearInterval(autoplayTimerRef.current);
+      autoplayTimerRef.current = null;
+    }
+  };
+
+  // startAutoplay recibe la función que debe ejecutar
+  const startAutoplay = useCallback(
+    (nextFn: () => void) => {
+      stopAutoplay();
+      autoplayTimerRef.current = setInterval(() => {
+        if (!isDragging && !isTransitioning) {
+          nextFn();
+        }
+      }, autoplaySpeed);
+    },
+    [isDragging, isTransitioning, autoplaySpeed]
+  );
+
+  // En useEffect y otros lugares, llama startAutoplay(() => handleNext())
+  // Control de autoplay basado en visibilidad
   useEffect(() => {
     if (!isClient || isTransitioning) return;
 
@@ -216,21 +257,27 @@ export default function CarouselComponent({
 
   const handlePrev = () => {
     if (isTransitioning) return;
-    setCurrentIndex(prev => prev - 1);
-    startAutoplay(); // Reset autoplay timer
-  };
-
-  const handleNext = () => {
-    if (isTransitioning) return;
-    setCurrentIndex(prev => prev + 1);
-    startAutoplay(); // Reset autoplay timer
+    setCurrentIndex((prev) => prev - 1);
+    startAutoplay(handleNext); // Reset autoplay timer
   };
 
   const handleDotClick = (index: number) => {
     if (isTransitioning) return;
     // Map the dot index to the middle set of slides
     setCurrentIndex(slides.length + index);
-    startAutoplay(); // Reset autoplay timer
+    startAutoplay(handleNext); // Reset autoplay timer
+  };
+
+  // Handlers de teclado para accesibilidad
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    switch (e.key) {
+      case "ArrowLeft":
+        handlePrev();
+        break;
+      case "ArrowRight":
+        handleNext();
+        break;
+    }
   };
 
   // Handlers de teclado para accesibilidad
@@ -249,7 +296,7 @@ export default function CarouselComponent({
   const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
     if (isTransitioning) return;
     setIsDragging(true);
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
     setDragStartX(clientX);
     setDragOffset(0);
     stopAutoplay();
@@ -257,8 +304,8 @@ export default function CarouselComponent({
 
   const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
     if (!isDragging) return;
-    
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+
+    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
     const newOffset = clientX - dragStartX;
     setDragOffset(newOffset);
   };
@@ -273,21 +320,21 @@ export default function CarouselComponent({
         handleNext();
       }
     }
-    
+
     setIsDragging(false);
     setDragOffset(0);
-    startAutoplay();
+    startAutoplay(handleNext);
   };
 
   // Calculate transform based on current index and drag offset
   const getTransform = () => {
-    if (!isClient) return 'translateX(0)';
-    
+    if (!isClient) return "translateX(0)";
+
     // Calculate center offset
     const containerWidth = carouselRef.current?.offsetWidth || 0;
     const totalSlideWidth = slideWidth + 1; // slide width + gap
     const centerOffset = (containerWidth - totalSlideWidth) / 2;
-    
+
     const baseTransform = -currentIndex * totalSlideWidth + centerOffset;
     const dragTransform = isDragging ? dragOffset : 0; // Corregido de 1 a 0
     
@@ -298,8 +345,18 @@ export default function CarouselComponent({
   const getActiveDotIndex = () => {
     // Map the current index to the original slides (middle set)
     const normalizedIndex = currentIndex % slides.length;
-    return normalizedIndex < 0 ? normalizedIndex + slides.length : normalizedIndex;
+    if (normalizedIndex < 0) {
+      return normalizedIndex + slides.length;
+    }
+    return normalizedIndex;
   };
+
+  // Ahora el return condicional
+  if (!slides?.length) {
+    return (
+      <div className="carousel-empty">No hay diapositivas disponibles</div>
+    );
+  }
 
   return (
     <div 

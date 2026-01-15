@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Link from "next/link";
@@ -11,6 +14,40 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
+  const [featuredDestinations, setFeaturedDestinations] = useState<
+    FeaturedDestination[]
+  >([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  const fetchFeaturedDestinations = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch("/api/featured-destinations");
+      if (!response.ok) {
+        throw new Error("Failed to fetch featured destinations");
+      }
+      const data = await response.json();
+      setFeaturedDestinations(data.data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An error occurred");
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (isMounted) {
+      fetchFeaturedDestinations();
+    }
+  }, [fetchFeaturedDestinations, isMounted]);
+
   return (
     <>
       <Navbar />
@@ -23,9 +60,6 @@ export default function Home() {
                 Del desierto de Atacama a los glaciares de la Patagonia,
                 descubra los paisajes más diversos de Sudamérica
               </p>
-              <a href="/tours" className="cta-button">
-                Descubre nuestros Tours
-              </a>
             </div>
           </div>
         </div>
@@ -36,11 +70,13 @@ export default function Home() {
               <div className="about-text">
                 <h2>Acerca de Dazocar</h2>
                 <p>
-                  Con más de dos décadas de experiencia, nos especializamos en
-                  crear viajes inolvidables a través de los paisajes más
-                  impresionantes de Chile. Nuestra pasión por los viajes y
-                  nuestro profundo conocimiento de la cultura chilena garantizan
-                  experiencias auténticas que van más allá del turismo típico.
+                  Somos una empresa con más de 15 años de experiencia en el
+                  mundo del turismo. Velamos por el interés y la seguridad de
+                  nuestros clientes brindándoles comodidad, confianza y un
+                  servicio de calidad a la altura de sus expectativas. Creemos
+                  en la necesidad de entregar un servicio diferenciado y
+                  personalizado a los distintos tipos de clientes, garantizando
+                  servicios turísticos de calidad con todos
                 </p>
                 <div className="about-buttons">
                   <Link href="/about" className="learn-more-btn">
@@ -114,7 +150,7 @@ export default function Home() {
           </div>
         </div>
 
-        <AnimatedSection className="why-choose-us">
+        <AnimatedSection className="why-choose-us-business">
           <div className="container">
             <h2>¿Por qué elegirnos?</h2>
             <div className="features-grid">
@@ -122,31 +158,16 @@ export default function Home() {
                 <div className="feature-icon">
                   <FontAwesomeIcon icon={faMapLocationDot} className="fa-icon" />
                 </div>
-                <h3>Guías locales Expertos</h3>
-                <p>
-                  Nuestros guías conocen cada rincón de Chile y te guiarán desde
-                  el primer momento.
-                </p>
-                <div className="feature-number">01</div>
               </div>
               <div className="feature">
                 <div className="feature-icon">
                   <FontAwesomeIcon icon={faUserGear} className="fa-icon" />
                 </div>
-                <h3>Experiencia Personalizada</h3>
-                <p>Los tours son desarrollados de acuerdo a su necesidad</p>
-                <div className="feature-number">02</div>
               </div>
               <div className="feature">
                 <div className="feature-icon">
                   <FontAwesomeIcon icon={faLeaf} className="fa-icon" />
                 </div>
-                <h3>Turismo Sustentable</h3>
-                <p>
-                  Comprometidos con la preservación de la belleza natural de
-                  Chile
-                </p>
-                <div className="feature-number">03</div>
               </div>
             </div>
           </div>

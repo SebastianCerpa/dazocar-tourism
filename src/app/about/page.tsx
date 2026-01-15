@@ -3,13 +3,13 @@ import "../styles/globals.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { AnimatedSection } from "../components/AnimatedSection";
+import Image from "next/image";
 
 const AboutPage: React.FC = () => {
   return (
     <>
       <Navbar />
       <div className="about-section">
-
         <section className="company-story">
           <div className="section-container story-content">
             <div className="story-text">
@@ -27,10 +27,12 @@ const AboutPage: React.FC = () => {
               </p>
             </div>
             <div className="story-image">
-              <img
+              <Image
                 src="/images/about.jpg"
                 alt="Chilean landscapes and tourism experiences"
                 className="about-img"
+                width={500}
+                height={400}
               />
             </div>
           </div>
@@ -53,10 +55,12 @@ const AboutPage: React.FC = () => {
                   </p>
                 </div>
                 <div className="story-image">
-                  <img
+                  <Image
                     src="/images/mission.jpg"
                     alt="Our mission to promote sustainable tourism in Chile"
                     className="about-img"
+                    width={500}
+                    height={400}
                   />
                 </div>
               </div>
@@ -70,9 +74,11 @@ const AboutPage: React.FC = () => {
                 <div className="values-grid">
                   <div className="value-card">
                     <div className="value-icon">
-                      <img
+                      <Image
                         src="/images/sustainability-icon.svg"
                         alt="Sustainability icon"
+                        width={40}
+                        height={40}
                       />
                     </div>
                     <h3>Sostenibilidad</h3>
@@ -81,17 +87,26 @@ const AboutPage: React.FC = () => {
                       los entornos naturales de Chile para las generaciones futuras.
                     </p>
                     <div className="value-image">
-                      <img
+                      <Image
                         src="/images/Sustainability.jpg"
                         alt="Sustainable tourism in Chile"
+                        width={400}
+                        height={300}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
                       />
                     </div>
                   </div>
                   <div className="value-card">
                     <div className="value-icon">
-                      <img
+                      <Image
                         src="/images/authenticity-icon.svg"
                         alt="Authenticity icon"
+                        width={40}
+                        height={40}
                       />
                     </div>
                     <h3>Autenticidad</h3>
@@ -100,15 +115,27 @@ const AboutPage: React.FC = () => {
                       experiencias y tradiciones locales genuinas.
                     </p>
                     <div className="value-image">
-                      <img
+                      <Image
                         src="/images/Authenticity.jpg"
                         alt="Authentic Chilean experiences"
+                        width={400}
+                        height={300}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
                       />
                     </div>
                   </div>
                   <div className="value-card">
                     <div className="value-icon">
-                      <img src="/images/respect-icon.svg" alt="Respect icon" />
+                      <Image
+                        src="/images/respect-icon.svg"
+                        alt="Respect icon"
+                        width={40}
+                        height={40}
+                      />
                     </div>
                     <h3>Respeto</h3>
                     <p>
@@ -116,9 +143,16 @@ const AboutPage: React.FC = () => {
                       que hacen de Chile un lugar único.
                     </p>
                     <div className="value-image">
-                      <img
+                      <Image
                         src="/images/Respect.jpg"
                         alt="Respecting Chilean ecosystems"
+                        width={400}
+                        height={300}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
                       />
                     </div>
                   </div>
