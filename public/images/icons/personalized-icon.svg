@@ -1,0 +1,8 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Minimalistic Personalized/Settings Icon -->
+  <circle cx="24" cy="24" r="4" stroke="#374151" stroke-width="2" fill="none"/>
+  <!-- Settings/gear teeth -->
+  <path d="M24 8v4M24 36v4M8 24h4M36 24h4M14.1 14.1l2.8 2.8M31.1 31.1l2.8 2.8M14.1 33.9l2.8-2.8M31.1 16.9l2.8-2.8" stroke="#6b7280" stroke-width="2" stroke-linecap="round"/>
+  <!-- Center adjustment knob -->
+  <circle cx="24" cy="24" r="2" fill="#374151"/>
+</svg>

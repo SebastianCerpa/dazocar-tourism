@@ -14,38 +14,23 @@
 
 .section-description {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: var(--font-size-body-lg);
   color: var(--color-text-secondary);
-  line-height: 1.6;
-  font-weight: 300;
-  opacity: 0;
-  animation: fadeIn 0.8s 0.4s forwards;
-  display: block;
-  width: 100%;
+  line-height: var(--line-height-relaxed);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Services Grid Section */
-.values-section {
-  padding: 3rem 0;
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #f8f9fa 20%,
-    #f8f9fa 80%,
-    #ffffff 100%
-  );
-  position: relative;
+/* Service category label */
+.destination-region {
+  display: inline-block;
+  font-size: var(--font-size-label);
+  color: var(--color-accent);
+  margin-bottom: 0.4rem;
+  font-weight: var(--font-weight-medium);
+  background-color: rgba(var(--color-accent-rgb), 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
 }
 
 .values-section .section-container {
@@ -58,10 +43,10 @@
   transform: none !important;
 }
 
-.values-section h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 0.75rem;
+.activity-tag {
+  display: inline-block;
+  font-size: var(--font-size-tag);
+  background-color: var(--color-gray-200);
   color: var(--color-text-primary);
   font-weight: 700;
   position: relative;
@@ -286,9 +271,8 @@
     var(--color-accent-hover) 100%
   );
   color: white;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 0.75rem 2rem;
+  font-weight: var(--font-weight-semibold);
+  padding: 0.8rem 2rem;
   border-radius: 30px;
   border: none;
   cursor: pointer;

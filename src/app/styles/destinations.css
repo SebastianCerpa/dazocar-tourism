@@ -14,8 +14,8 @@
   text-align: center;
   margin-bottom: 3rem;
   position: relative;
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
 }
 
@@ -33,9 +33,11 @@
 /* Service Cards Grid */
 .service-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 5rem;
+  justify-content: center;
+  justify-items: center;
 }
 
 /* Service Card */
@@ -58,6 +60,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -70,6 +73,7 @@
 }
 
 .service-image {
+  width: 100%;
   height: 200px;
   background-size: cover;
   background-position: center;
@@ -83,35 +87,18 @@
   transform: scale(1.05);
 }
 
-/* Imagen frontal de la card */
-.service-image-front {
-  display: block;
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-}
-
-/* Ajuste de la superposición para que no oscurezca demasiado la imagen */
 .service-image-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.1); /* Menor opacidad */
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+  transition: background 0.3s ease;
 }
 
 .service-card:hover .service-image-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.5)
-  );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
 }
 
 .service-content {
@@ -123,8 +110,8 @@
 }
 
 .service-content h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
   margin-bottom: 0.75rem;
   color: var(--color-text-primary);
 }
@@ -132,7 +119,7 @@
 .service-content p {
   color: var(--color-text-secondary);
   margin-bottom: 1.5rem;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
   flex-grow: 1;
 }
 
@@ -142,7 +129,7 @@
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   align-self: flex-start;
@@ -189,6 +176,7 @@
     opacity: 0;
     transform: scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -220,7 +208,8 @@
 
 .modal-image {
   width: 100%;
-  height: 400px; /* Increased from 350px */
+  height: 400px;
+  /* Increased from 350px */
   overflow: hidden;
   position: relative;
 }
@@ -249,12 +238,13 @@
 }
 
 .modal-details {
-  padding: 2.5rem; /* Increased from 2rem */
+  padding: 2.5rem;
+  /* Increased from 2rem */
 }
 
 .modal-details h2 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: var(--font-size-h2-mobile);
+  font-weight: var(--font-weight-bold);
   margin-bottom: 1.5rem;
   color: var(--color-text-primary);
 }
@@ -292,11 +282,10 @@
   border: none;
   padding: 0.85rem 1.75rem;
   border-radius: 4px;
-  font-weight: 600;
-  font-size: 1.1rem;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-button-lg);
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease,
-    box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -324,14 +313,14 @@
 }
 
 .modal-info h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: var(--font-size-h5);
+  font-weight: var(--font-weight-semibold);
   margin-bottom: 0.5rem;
   color: var(--color-accent);
 }
 
 .modal-info p {
-  line-height: 1.8;
+  line-height: var(--line-height-loose);
   color: var(--color-text-secondary);
 }
 
@@ -339,37 +328,44 @@
 @media (min-width: 768px) {
   .modal-content {
     flex-direction: row;
-    max-height: 85vh; /* Increased from 80vh */
+    max-height: 85vh;
+    /* Increased from 80vh */
   }
 
   .modal-image {
-    width: 45%; /* Increased from 40% */
+    width: 45%;
+    /* Increased from 40% */
     height: auto;
   }
 
   .modal-details {
-    width: 55%; /* Adjusted from 60% */
+    width: 55%;
+    /* Adjusted from 60% */
     overflow-y: auto;
   }
 }
 
 @media (max-width: 768px) {
   .service-cards-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+    gap: 1.5rem;
   }
 
   .modal-content {
-    max-height: 85vh; /* Increased from 80vh */
+    max-height: 85vh;
+    /* Increased from 80vh */
   }
 
   .modal-image {
-    height: 250px; /* Increased from 200px */
+    height: 250px;
+    /* Increased from 200px */
   }
 }
 
 @media (max-width: 480px) {
   .service-cards-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(280px, 1fr);
+    padding: 0 1rem;
   }
 
   .modal-overlay {
