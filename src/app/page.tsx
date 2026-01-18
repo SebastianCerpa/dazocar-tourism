@@ -130,16 +130,22 @@ export default function Home() {
                 <div className="feature-icon">
                   <FontAwesomeIcon icon={faMapLocationDot} className="fa-icon" />
                 </div>
+                <h3>Destinos Únicos</h3>
+                <p>Acceso a lugares exclusivos y experiencias auténticas en todo Chile</p>
               </div>
               <div className="feature">
                 <div className="feature-icon">
                   <FontAwesomeIcon icon={faUserGear} className="fa-icon" />
                 </div>
+                <h3>Servicio Personalizado</h3>
+                <p>Itinerarios adaptados a tus preferencias y necesidades específicas</p>
               </div>
               <div className="feature">
                 <div className="feature-icon">
                   <FontAwesomeIcon icon={faLeaf} className="fa-icon" />
                 </div>
+                <h3>Turismo Sostenible</h3>
+                <p>Compromiso con el medio ambiente y las comunidades locales</p>
               </div>
             </div>
           </div>
