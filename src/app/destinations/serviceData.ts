@@ -113,65 +113,54 @@ export const serviceCategories: ServiceCategory[] = [
     ],
   },
   {
-    id: "traditional-vineyards",
-    title: "Traditional Vineyards",
+    id: 'traditional-vineyards',
+    title: 'Viñedos Tradicionales',
     services: [
       {
-        id: "concha-y-toro",
-        name: "Concha y Toro",
-        description:
-          "Visit one of Chile's most famous wineries and taste their world-renowned wines.",
-        details:
-          "Concha y Toro offers two tour experiences: The Traditional Tour (1:15 duration) includes a walk through the gardens of the summer residence, a visit to the external part of the manor house, the variety garden, and Pirque's old cellars, plus a tasting of 3 wines. The Premium Tour (2 hours) adds access to the interior of the manor house, a visit to the new technological wine cellar, and a tasting of 4 premium reserve wines paired with cheese.",
-        schedules: "Traditional – duration 1:15. Premium – approx. 2h",
-        image: "/images/viñedos.jpg",
-        thumbnailImage: "/images/viñedos.jpg",
+        id: 'concha-y-toro',
+        name: 'Concha y Toro',
+        description: 'Visit one of Chile\'s most famous wineries and taste their world-renowned wines.',
+        details: 'Concha y Toro offers two tour experiences: The Traditional Tour (1:15 duration) includes a walk through the gardens of the summer residence, a visit to the external part of the manor house, the variety garden, and Pirque\'s old cellars, plus a tasting of 3 wines. The Premium Tour (2 hours) adds access to the interior of the manor house, a visit to the new technological wine cellar, and a tasting of 4 premium reserve wines paired with cheese.',
+        schedules: 'Traditional – duration 1:15. Premium – approx. 2h',
+        image: '/images/viñedos.jpg',
+        thumbnailImage: '/images/concha-toro.png'
       },
       {
-        id: "undurraga",
-        name: "Undurraga",
-        description:
-          "Experience one of Chile's oldest vineyards with a tour that combines tradition and innovation.",
-        details:
-          "At Undurraga Vineyard, the Traditional Tour (1:15 duration) takes you through the beautiful gardens, the family's original house, and traditional cellars, concluding with a tasting of 3 wines from their classic line. The Premium Tour (2 hours) extends the experience with a visit to the modern production facilities and barrel room, finishing with a guided tasting of 4 premium wines accompanied by selected cheeses and gourmet crackers.",
-        schedules: "Traditional – duration 1:15. Premium – approx. 2h",
-        image: "/images/viñedos.jpg",
-        thumbnailImage: "/images/viñedos.jpg",
+        id: 'undurraga',
+        name: 'Undurraga',
+        description: 'Experience one of Chile\'s oldest vineyards with a tour that combines tradition and innovation.',
+        details: 'At Undurraga Vineyard, the Traditional Tour (1:15 duration) takes you through the beautiful gardens, the family\'s original house, and traditional cellars, concluding with a tasting of 3 wines from their classic line. The Premium Tour (2 hours) extends the experience with a visit to the modern production facilities and barrel room, finishing with a guided tasting of 4 premium wines accompanied by selected cheeses and gourmet crackers.',
+        schedules: 'Traditional – duration 1:15. Premium – approx. 2h',
+        image: '/images/undurraga.png',
+        thumbnailImage: '/images/viña-undurraga.jpg'
       },
       {
-        id: "santa-rita",
-        name: "Santa Rita",
-        description:
-          "Discover the perfect blend of wine tradition and Chilean history at this historic estate.",
-        details:
-          "Santa Rita Vineyard offers a Traditional Tour (1:15 duration) that includes a visit to the historic Doña Paula Restaurant, the neo-gothic chapel, and classic wine cellars, followed by a tasting of 3 wines. The Premium Tour (2 hours) adds a visit to the Andean Museum with its pre-Columbian art collection, a tour of the premium production area, and a tasting of 4 reserve wines paired with artisanal cheeses in an exclusive tasting room.",
-        schedules: "Traditional – duration 1:15. Premium – approx. 2h",
-        image: "/images/viñedos.jpg",
-        thumbnailImage: "/images/viñedos.jpg",
+        id: 'santa-rita',
+        name: 'Santa Rita',
+        description: 'Discover the perfect blend of wine tradition and Chilean history at this historic estate.',
+        details: 'Santa Rita Vineyard offers a Traditional Tour (1:15 duration) that includes a visit to the historic Doña Paula Restaurant, the neo-gothic chapel, and classic wine cellars, followed by a tasting of 3 wines. The Premium Tour (2 hours) adds a visit to the Andean Museum with its pre-Columbian art collection, a tour of the premium production area, and a tasting of 4 reserve wines paired with artisanal cheeses in an exclusive tasting room.',
+        schedules: 'Traditional – duration 1:15. Premium – approx. 2h',
+        image: '/images/viña-santa-rita.png',
+        thumbnailImage: '/images/santa-rita.png'
       },
       {
-        id: "cousino-macul",
-        name: "Cousiño Macul",
-        description:
-          "Tour the oldest family-owned winery in Chile, operating continuously since 1856.",
-        details:
-          "Cousiño Macul offers a Traditional Tour (1:15 duration) through their historic cellars and vineyards, explaining their traditional winemaking methods passed down through generations, with a tasting of 3 classic wines. The Premium Tour (2 hours) provides a more comprehensive experience including a visit to the family's private cellar, the modern production facility, and concludes with a guided tasting of 4 premium wines paired with selected cheeses and charcuterie.",
-        schedules: "Traditional – duration 1:15. Premium – approx. 2h",
-        image: "/images/viñedos.jpg",
-        thumbnailImage: "/images/viñedos.jpg",
+        id: 'cousino-macul',
+        name: 'Cousiño Macul',
+        description: 'Tour the oldest family-owned winery in Chile, operating continuously since 1856.',
+        details: 'Cousiño Macul offers a Traditional Tour (1:15 duration) through their historic cellars and vineyards, explaining their traditional winemaking methods passed down through generations, with a tasting of 3 classic wines. The Premium Tour (2 hours) provides a more comprehensive experience including a visit to the family\'s private cellar, the modern production facility, and concludes with a guided tasting of 4 premium wines paired with selected cheeses and charcuterie.',
+        schedules: 'Traditional – duration 1:15. Premium – approx. 2h',
+        image: '/images/cousino.png',
+        thumbnailImage: '/images/viña-cousino.jpg'
       },
       {
-        id: "alyan",
-        name: "Alyan",
-        description:
-          "Experience a unique sunset night tour at this boutique winery with spectacular views.",
-        details:
-          "The Alyan Sunset Night Tour offers a magical experience as the sun sets over the vineyards. This special evening tour includes a guided walk through the vineyards during golden hour, followed by a visit to the production facilities illuminated for the evening. The experience culminates with a wine tasting under the stars on their panoramic terrace, featuring 4 premium wines paired with local appetizers. This tour provides a unique perspective on Chilean winemaking and stunning photo opportunities.",
-        schedules:
-          "Sunset night tour (times vary seasonally, typically 6:00 PM - 9:00 PM)",
-        image: "/images/viñedos.jpg",
-        thumbnailImage: "/images/viñedos.jpg",
-      },
-    ],
-  },
+        id: 'alyan',
+        name: 'Alyan',
+        description: 'Experience a unique sunset night tour at this boutique winery with spectacular views.',
+        details: 'The Alyan Sunset Night Tour offers a magical experience as the sun sets over the vineyards. This special evening tour includes a guided walk through the vineyards during golden hour, followed by a visit to the production facilities illuminated for the evening. The experience culminates with a wine tasting under the stars on their panoramic terrace, featuring 4 premium wines paired with local appetizers. This tour provides a unique perspective on Chilean winemaking and stunning photo opportunities.',
+        schedules: 'Sunset night tour (times vary seasonally, typically 6:00 PM - 9:00 PM)',
+        image: '/images/viña-alyan.png',
+        thumbnailImage: '/images/alyan.jpg'
+      }
+    ]
+  }
 ];

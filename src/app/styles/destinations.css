@@ -2,6 +2,7 @@
 
 .services-section {
   margin: 3rem;
+  padding-top: 100px; /* Offset for fixed navbar */
 }
 
 /* Service Category Section */

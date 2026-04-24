@@ -29,7 +29,7 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 40px;
+  width: 60px;
   height: 2px;
   background-color: var(--color-gray-500);
 }
@@ -73,8 +73,8 @@
 }
 
 .social-icon {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   fill: var(--color-gray-300);
   transition: fill 0.3s ease, transform 0.3s ease;
 }

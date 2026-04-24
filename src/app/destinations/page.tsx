@@ -96,9 +96,9 @@ export default function Destinations() {
                   src="/images/chile-map.jpg"
                   alt="Map of Chile highlighting tourist destinations"
                   className="about-img"
-                  width={800} // reemplaza con el ancho real de la imagen
-                  height={600} // reemplaza con la altura real
-                  priority={true} // opcional: si es una imagen importante en el primer render
+                  width={800}
+                  height={600}
+                  priority={true}
                 />
               </div>
             </div>
