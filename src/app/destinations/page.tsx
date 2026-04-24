@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import "../styles/globals.css";
 import "../styles/destinations.css";
 import Footer from "../components/Footer";
@@ -193,7 +194,7 @@ export default function Destinations() {
                 </p>
               </div>
               <div className="story-image">
-                <img
+                <Image
                   src="/images/chile-map.jpg"
                   alt="Map of Chile highlighting tourist destinations"
                   className="about-img"
