@@ -91,6 +91,7 @@ const Navbar: React.FC = () => {
           <NavLink href="/" label="Inicio" onClick={closeMenu} />
           <NavLink href="/about" label="Acerca de" onClick={closeMenu} />
           <NavLink href="/services" label="Servicios" onClick={closeMenu} />
+          <NavLink href="/destinations" label="Destinos" onClick={closeMenu} />
           <NavLink href="/contact" label="Contacto" onClick={closeMenu} />
         </ul>
       </nav>

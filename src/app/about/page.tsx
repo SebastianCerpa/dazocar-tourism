@@ -28,7 +28,7 @@ const AboutPage: React.FC = () => {
             </div>
             <div className="story-image">
               <Image
-                src="/images/about.jpg"
+                src="/images/chile-landscape.jpg"
                 alt="Chilean landscapes and tourism experiences"
                 className="about-img"
                 width={500}
@@ -56,7 +56,7 @@ const AboutPage: React.FC = () => {
                 </div>
                 <div className="story-image">
                   <Image
-                    src="/images/mission.jpg"
+                    src="/images/chile-culture.jpg"
                     alt="Our mission to promote sustainable tourism in Chile"
                     className="about-img"
                     width={500}
