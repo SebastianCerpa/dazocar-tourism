@@ -105,7 +105,7 @@ export default function Home() {
                     image: "/images/valparaiso.jpg",
                     icon: "/images/logo.png",
                     title: "Valparaíso",
-                    description: "Descubre los misterios de las estatuas Moai",
+                    description: "Un viaje por los cerros coloridos y la cultura bohemia del puerto principal",
                   },
                   {
                     image: "/images/viñedos.jpg",
@@ -130,15 +130,27 @@ export default function Home() {
                 <div className="feature-icon">
                   <FontAwesomeIcon icon={faMapLocationDot} className="fa-icon" />
                 </div>
+                <div className="feature-content">
+                  <h3>Destinos Exclusivos</h3>
+                  <p>Acceso a lugares únicos manejados por equipos locales para una experiencia inolvidable.</p>
+                </div>
               </div>
               <div className="feature">
                 <div className="feature-icon">
                   <FontAwesomeIcon icon={faUserGear} className="fa-icon" />
                 </div>
+                <div className="feature-content">
+                  <h3>Servicio Premium</h3>
+                  <p>Atención hiper-personalizada a cada detalle de su estadía para asegurar la más alta calidad.</p>
+                </div>
               </div>
               <div className="feature">
                 <div className="feature-icon">
                   <FontAwesomeIcon icon={faLeaf} className="fa-icon" />
+                </div>
+                <div className="feature-content">
+                  <h3>Turismo Responsable</h3>
+                  <p>Iniciativas amigables con el medio ambiente y compromiso genuino con las culturas locales.</p>
                 </div>
               </div>
             </div>

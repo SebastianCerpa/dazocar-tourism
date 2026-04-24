@@ -58,9 +58,9 @@
   
   /* ==================== LETTER SPACING ==================== */
   
-  --letter-spacing-tight: -0.5px;         /* Large headings */
+  --letter-spacing-tight: 0px;            /* Normal for Nunito Sans */
   --letter-spacing-normal: 0;             /* Default */
-  --letter-spacing-wide: 0.5px;           /* Small caps, labels */
+  --letter-spacing-wide: 0.05em;          /* Subtle tracking for caps */
 }
 
 /* ==================== UTILITY CLASSES (OPTIONAL) ==================== */

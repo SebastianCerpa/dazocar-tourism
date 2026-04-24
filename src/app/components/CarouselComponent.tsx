@@ -25,24 +25,19 @@ const Slide = memo(({ slide, width }: { slide: SlideItem; width: number }) => {
   return (
     <div className="carousel-slide" style={{ width: `${width}px` }}>
       <div className="service-card">
-        <div className="card-image-container">
-          {!imageLoaded && !imageError && <div className="image-placeholder">Cargando...</div>}
-          {imageError && <div className="image-error">No se pudo cargar la imagen</div>}
+        <div className="service-image-wrapper" style={{ width: '100%', height: '200px', position: 'relative', clipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 100%)', backgroundColor: '#e0e0e0', overflow: 'hidden' }}>
           <img 
             src={slide.image} 
             alt={slide.title} 
-            className={`card-image ${imageLoaded ? 'loaded' : ''}`} 
-            onLoad={() => setImageLoaded(true)}
-            onError={() => setImageError(true)}
-            style={{ display: imageLoaded ? 'block' : 'none' }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
         </div>
         <div className="service-icon">
           <img 
             src={slide.icon} 
             alt={`${slide.title} icon`} 
+            style={{ width: '50px', height: '50px', objectFit: 'contain', padding: '5px' }}
             onError={(e) => {
-              // Fallback para iconos que no cargan
               (e.target as HTMLImageElement).style.display = 'none';
             }} 
           />

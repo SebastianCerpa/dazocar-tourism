@@ -4,23 +4,23 @@ import { NextResponse } from "next/server";
 const services = [
   {
     id: 1,
-    name: "Personalized Service",
+    name: "Servicio Personalizado",
     description:
-      "Tailored travel experiences designed specifically for your preferences and interests. Our personalized service includes private guides, customized itineraries, and exclusive access to unique locations throughout Chile.",
+      "Experiencias de viaje personalizadas diseñadas específicamente para tus preferencias e intereses. Nuestro servicio incluye guías privados e itinerarios a tu medida.",
     image: "/images/serv-personalizado.png",
   },
   {
     id: 2,
-    name: "Family Service",
+    name: "Servicio Familiar",
     description:
-      "Family-friendly adventures designed with children and parents in mind. These services include age-appropriate activities, family accommodations, and guides experienced in working with children of all ages.",
-    image: "/images/serv-family.png",
+      "Aventuras familiares diseñadas pensando en niños y padres. Opciones de alojamiento familiar y guías con experiencia trabajando con niños.",
+    image: "/images/chile-landscape.jpg",
   },
   {
     id: 3,
-    name: "Business Service",
+    name: "Servicio Empresarial",
     description:
-      "Professional services for corporate clients including team-building retreats, conference planning, and executive tours. We handle all logistics while maintaining the highest standards of professionalism and comfort.",
+      "Servicios corporativos que incluyen retiros de team-building, planificación de conferencias y tours ejecutivos del más alto nivel.",
     image: "/images/serv-business.jpg",
   },
 ];

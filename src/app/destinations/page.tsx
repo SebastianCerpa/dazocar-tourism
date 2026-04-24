@@ -34,36 +34,36 @@ const initialServiceCategories: ServiceCategory[] = [
       {
         id: 'city-tour',
         name: 'City Tour / Santiago',
-        description: 'Explore the vibrant capital of Chile with our guided city tour. Discover the perfect blend of historical landmarks and modern architecture.',
-        details: 'Our Santiago City Tour offers two options to fit your schedule: a 4-hour half-day experience covering the main attractions, or an 8-hour full-day immersion that includes lunch at a local restaurant and visits to additional sites. You\'ll explore Plaza de Armas, San Cristobal Hill, Bellavista neighborhood, and more with our knowledgeable guides who provide cultural and historical context throughout the journey.',
-        schedules: '4h half day (9:00 AM - 1:00 PM) – 8h full day (9:00 AM - 5:00 PM)',
+        description: 'Explore la vibrante capital de Chile con nuestro recorrido guiado. Descubra la mezcla perfecta de historia y arquitectura moderna.',
+        details: 'Nuestro City Tour por Santiago ofrece dos opciones: medio día (4 horas) cubriendo las principales atracciones, o día completo (8 horas) que incluye almuerzo y lugares adicionales. Explorará la Plaza de Armas, Cerro San Cristóbal, Barrio Bellavista y más con nuestros guías expertos.',
+        schedules: 'Medio día 4h (9:00 AM - 1:00 PM) – Día completo 8h (9:00 AM - 5:00 PM)',
         image: '/images/city-tour.jpg',
         thumbnailImage: '/images/city-tour.jpg'
       },
       {
         id: 'valparaiso-tour',
         name: 'Valparaíso / Viña del Mar Tour',
-        description: 'Visit the colorful coastal cities of Valparaíso and Viña del Mar in this full-day excursion from Santiago.',
-        details: 'This full-day tour takes you to Chile\'s central coast to explore two contrasting cities. In Valparaíso, a UNESCO World Heritage site, you\'ll wander through labyrinthine streets adorned with colorful street art and ride the historic funiculars. Then continue to the garden city of Viña del Mar with its beautiful beaches, parks, and elegant architecture. The tour includes transportation, guided visits, and time to enjoy local cuisine at recommended restaurants.',
-        schedules: 'Full day tour (8:30 AM - 6:30 PM)',
+        description: 'Visite las coloridas ciudades costeras de Valparaíso y Viña del Mar en esta excursión de día completo desde Santiago.',
+        details: 'Este tour lo lleva a explorar dos ciudades contrastantes. En Valparaíso, Patrimonio de la Humanidad, paseará por calles laberínticas, arte urbano y ascensores históricos. Luego continuaremos hasta la ciudad jardín de Viña del Mar con sus hermosas playas y elegante arquitectura.',
+        schedules: 'Tour de día completo (8:30 AM - 6:30 PM)',
         image: '/images/valparaiso.jpg',
         thumbnailImage: '/images/valparaiso.jpg'
       },
       {
         id: 'mountain-tours',
         name: 'Cordilleras',
-        description: 'Experience the majestic Andes mountains with panoramic tours to Farellones Park or Valle Nevado.',
-        details: 'Our mountain tours offer breathtaking views of the Andes and exciting activities year-round. During winter (June-August), enjoy world-class skiing and snowboarding at Valle Nevado or Farellones. In summer, the mountains transform into hiking paradises with trails for all difficulty levels. The panoramic tour includes transportation with stops at scenic viewpoints, while adventure packages can include equipment rental and instruction for winter sports or guided hiking experiences.',
-        schedules: 'Panoramic Tour available year-round (8:00 AM - 5:00 PM)',
+        description: 'Experimente la majestuosa Cordillera de los Andes con recorridos panorámicos a Farellones o Valle Nevado.',
+        details: 'Nuestros tours de montaña ofrecen impresionantes vistas de los Andes. Durante el invierno, disfrute de la nieve en Valle Nevado o Farellones. En verano, las montañas se transforman en paraísos ideales para el senderismo. Incluye transporte y paradas en miradores.',
+        schedules: 'Tour panorámico disponible todo el año (8:00 AM - 5:00 PM)',
         image: '/images/torres.jpg',
         thumbnailImage: '/images/torres.jpg'
       },
       {
         id: 'transfer',
         name: 'Transfer in/out',
-        description: 'Convenient and reliable airport transfers to and from your accommodation in Santiago.',
-        details: 'Our professional transfer service ensures a smooth start and end to your Chilean adventure. We offer punctual airport pickups with drivers holding welcome signs, comfortable vehicles ranging from sedans to minivans depending on your group size, and 24/7 availability to accommodate any flight schedule. All our drivers speak English and can provide basic information about Santiago during your transfer.',
-        schedules: 'Available 24/7, scheduled according to your flight times',
+        description: 'Traslados convenientes y confiables desde y hacia el aeropuerto a su alojamiento en Santiago.',
+        details: 'Nuestro servicio de traslado profesional garantiza un inicio y final perfectos para su aventura. Ofrecemos recogidas puntuales en el aeropuerto con un conductor experto, vehículos cómodos y disponibilidad 24/7 de acuerdo al horario de su vuelo.',
+        schedules: 'Disponible 24/7, programado según el horario de su vuelo',
         image: '/images/serv-business.jpg',
         thumbnailImage: '/images/serv-business.jpg'
       }
@@ -76,45 +76,45 @@ const initialServiceCategories: ServiceCategory[] = [
       {
         id: 'concha-y-toro',
         name: 'Concha y Toro',
-        description: 'Visit one of Chile\'s most famous wineries and taste their world-renowned wines.',
-        details: 'Concha y Toro offers two tour experiences: The Traditional Tour (1:15 duration) includes a walk through the gardens of the summer residence, a visit to the external part of the manor house, the variety garden, and Pirque\'s old cellars, plus a tasting of 3 wines. The Premium Tour (2 hours) adds access to the interior of the manor house, a visit to the new technological wine cellar, and a tasting of 4 premium reserve wines paired with cheese.',
-        schedules: 'Traditional – duration 1:15. Premium – approx. 2h',
+        description: 'Visite una de las viñas más famosas de Chile y deguste sus mundialmente reconocidos vinos.',
+        details: 'El Tour Tradicional incluye una caminata por los jardines de la residencia de verano, una visita al parque de variedades y a las antiguas bodegas de Pirque, terminando con una degustación de vinos.',
+        schedules: 'Tradicional – duración 1:15h. Premium – aprox. 2h',
         image: '/images/viñedos.jpg',
         thumbnailImage: '/images/concha-toro.png'
       },
       {
         id: 'undurraga',
         name: 'Undurraga',
-        description: 'Experience one of Chile\'s oldest vineyards with a tour that combines tradition and innovation.',
-        details: 'At Undurraga Vineyard, the Traditional Tour (1:15 duration) takes you through the beautiful gardens, the family\'s original house, and traditional cellars, concluding with a tasting of 3 wines from their classic line. The Premium Tour (2 hours) extends the experience with a visit to the modern production facilities and barrel room, finishing with a guided tasting of 4 premium wines accompanied by selected cheeses and gourmet crackers.',
-        schedules: 'Traditional – duration 1:15. Premium – approx. 2h',
+        description: 'Experimente una de las viñas más antiguas de Chile con un recorrido que combina tradición e innovación.',
+        details: 'En Viña Undurraga, el Tour de 1:15 hrs lo lleva a través de los hermosos jardines, la casa original de la familia y las bodegas tradicionales, concluyendo con una gran degustación.',
+        schedules: 'Tradicional – duración 1:15h. Premium – aprox. 2h',
         image: '/images/undurraga.png',
         thumbnailImage: '/images/viña-undurraga.jpg'
       },
       {
         id: 'santa-rita',
         name: 'Santa Rita',
-        description: 'Discover the perfect blend of wine tradition and Chilean history at this historic estate.',
-        details: 'Santa Rita Vineyard offers a Traditional Tour (1:15 duration) that includes a visit to the historic Doña Paula Restaurant, the neo-gothic chapel, and classic wine cellars, followed by a tasting of 3 wines. The Premium Tour (2 hours) adds a visit to the Andean Museum with its pre-Columbian art collection, a tour of the premium production area, and a tasting of 4 reserve wines paired with artisanal cheeses in an exclusive tasting room.',
-        schedules: 'Traditional – duration 1:15. Premium – approx. 2h',
+        description: 'Descubra la mezcla perfecta de tradición vitivinícola e historia chilena en sus hermosos jardines.',
+        details: 'El Tour en Viña Santa Rita incluye una visita al histórico Restaurante Doña Paula, la capilla neogótica y las clásicas bodegas, seguido de una espectacular cata especializada.',
+        schedules: 'Tradicional – duración 1:15h. Premium – aprox. 2h',
         image: '/images/viña-santa-rita.png',
         thumbnailImage: '/images/santa-rita.png'
       },
       {
         id: 'cousino-macul',
         name: 'Cousiño Macul',
-        description: 'Tour the oldest family-owned winery in Chile, operating continuously since 1856.',
-        details: 'Cousiño Macul offers a Traditional Tour (1:15 duration) through their historic cellars and vineyards, explaining their traditional winemaking methods passed down through generations, with a tasting of 3 classic wines. The Premium Tour (2 hours) provides a more comprehensive experience including a visit to the family\'s private cellar, the modern production facility, and concludes with a guided tasting of 4 premium wines paired with selected cheeses and charcuterie.',
-        schedules: 'Traditional – duration 1:15. Premium – approx. 2h',
+        description: 'Recorra la viña familiar más antigua de Chile, operando ininterrumpidamente desde 1856.',
+        details: 'Cousiño Macul ofrece un tour a través de sus bodegas históricas, explicando sus métodos tradicionales transmitidos por generaciones.',
+        schedules: 'Tradicional – duración 1:15h. Premium – aprox. 2h',
         image: '/images/cousino.png',
         thumbnailImage: '/images/viña-cousino.jpg'
       },
       {
         id: 'alyan',
         name: 'Alyan',
-        description: 'Experience a unique sunset night tour at this boutique winery with spectacular views.',
-        details: 'The Alyan Sunset Night Tour offers a magical experience as the sun sets over the vineyards. This special evening tour includes a guided walk through the vineyards during golden hour, followed by a visit to the production facilities illuminated for the evening. The experience culminates with a wine tasting under the stars on their panoramic terrace, featuring 4 premium wines paired with local appetizers. This tour provides a unique perspective on Chilean winemaking and stunning photo opportunities.',
-        schedules: 'Sunset night tour (times vary seasonally, typically 6:00 PM - 9:00 PM)',
+        description: 'Disfrute de un tour y cata nocturna única al atardecer en esta viña boutique de espectaculares vistas.',
+        details: 'El tour Alyan Sunset Night ofrece una experiencia mágica cuando el sol se pone sobre los viñedos, con una caminata iluminada y vinos premium bajo las estrellas.',
+        schedules: 'Tour Sunset (el horario varía según la temporada, usualmente 6:00 PM - 9:00 PM)',
         image: '/images/viña-alyan.png',
         thumbnailImage: '/images/alyan.jpg'
       }
