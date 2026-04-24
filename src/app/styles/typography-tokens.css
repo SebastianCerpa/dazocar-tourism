@@ -1,0 +1,179 @@
+/**
+ * Typography Design Tokens
+ * 
+ * Sistema tipográfico consistente basado en la auditoría del proyecto.
+ * Estos tokens unifican todos los tamaños, pesos y estilos de fuente.
+ * 
+ * Font: Montserrat (Google Fonts)
+ */
+
+:root {
+  /* ==================== FONT SIZES ==================== */
+  
+  /* Display - Para hero/landing pages */
+  --font-size-display: 3rem;              /* 48px - Hero principal */
+  --font-size-display-mobile: 2rem;       /* 32px - Hero mobile */
+  
+  /* Headings */
+  --font-size-h1: 2.5rem;                 /* 40px - Main headings */
+  --font-size-h1-mobile: 2rem;            /* 32px - Mobile */
+  --font-size-h2: 2.5rem;                 /* 40px - Section headings */
+  --font-size-h2-mobile: 2rem;            /* 32px - Mobile */
+  --font-size-h3: 1.5rem;                 /* 24px - Subsections */
+  --font-size-h4: 1.3rem;                 /* 20.8px - Cards */
+  --font-size-h5: 1.2rem;                 /* 19.2px - Small emphasis */
+  --font-size-h6: 1.1rem;                 /* 17.6px - Minimal heading */
+  
+  /* Body Text */
+  --font-size-body-base: 1rem;            /* 16px - Default body */
+  --font-size-body-lg: 1.1rem;            /* 17.6px - Large body */
+  --font-size-body-lead: 1.2rem;          /* 19.2px - Intro/lead text */
+  
+  /* Small Text */
+  --font-size-small: 0.875rem;            /* 14px - Small text */
+  --font-size-caption: 0.75rem;           /* 12px - Captions */
+  --font-size-label: 0.75rem;             /* 12px - Form labels */
+  --font-size-tag: 0.7rem;                /* 11.2px - Tags */
+  
+  /* Buttons & UI */
+  --font-size-button: 1rem;               /* 16px - Standard buttons */
+  --font-size-button-lg: 1.1rem;          /* 17.6px - Large CTAs */
+  --font-size-button-sm: 0.875rem;        /* 14px - Small buttons */
+  
+  /* ==================== FONT WEIGHTS ==================== */
+  
+  --font-weight-light: 300;
+  --font-weight-regular: 400;             /* Body text standard */
+  --font-weight-medium: 500;              /* Subtle emphasis */
+  --font-weight-semibold: 600;            /* Headings, buttons */
+  --font-weight-bold: 700;                /* Strong emphasis */
+  
+  /* ==================== LINE HEIGHTS ==================== */
+  
+  --line-height-tight: 1.2;               /* Large headings */
+  --line-height-snug: 1.3;                /* Small headings */
+  --line-height-normal: 1.5;              /* Default */
+  --line-height-relaxed: 1.6;             /* Body paragraphs */
+  --line-height-loose: 1.8;               /* Large text blocks */
+  
+  /* ==================== LETTER SPACING ==================== */
+  
+  --letter-spacing-tight: -0.5px;         /* Large headings */
+  --letter-spacing-normal: 0;             /* Default */
+  --letter-spacing-wide: 0.5px;           /* Small caps, labels */
+}
+
+/* ==================== UTILITY CLASSES (OPTIONAL) ==================== */
+
+/* Display Text */
+.text-display {
+  font-size: var(--font-size-display);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+/* Headings */
+.text-h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.text-h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.text-h3 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+}
+
+.text-h4 {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+}
+
+.text-h5 {
+  font-size: var(--font-size-h5);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+}
+
+.text-h6 {
+  font-size: var(--font-size-h6);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-snug);
+}
+
+/* Body Text */
+.text-body {
+  font-size: var(--font-size-body-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-relaxed);
+}
+
+.text-body-lg {
+  font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-relaxed);
+}
+
+.text-lead {
+  font-size: var(--font-size-body-lead);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-loose);
+}
+
+/* Small Text */
+.text-small {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-normal);
+}
+
+.text-caption {
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-normal);
+}
+
+/* Font Weight Utilities */
+.font-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .text-display {
+    font-size: var(--font-size-display-mobile);
+  }
+  
+  .text-h1 {
+    font-size: var(--font-size-h1-mobile);
+  }
+  
+  .text-h2 {
+    font-size: var(--font-size-h2-mobile);
+  }
+}

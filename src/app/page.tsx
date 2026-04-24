@@ -1,55 +1,24 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import { AnimatedSection } from "./components/AnimatedSection";
 import CarouselComponent from "./components/CarouselComponent";
-import Image from "next/image";
-
-interface FeaturedDestination {
-  id: number;
-  image: string;
-  icon: string;
-  title: string;
-  description: string;
-}
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMapLocationDot,
+  faUserGear,
+  faLeaf,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
-  const [featuredDestinations, setFeaturedDestinations] = useState<
-    FeaturedDestination[]
-  >([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const [isMounted, setIsMounted] = useState(false);
-
-  const fetchFeaturedDestinations = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await fetch("/api/featured-destinations");
-      if (!response.ok) {
-        throw new Error("Failed to fetch featured destinations");
-      }
-      const data = await response.json();
-      setFeaturedDestinations(data.data);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred");
-    } finally {
-      setLoading(false);
-    }
-  }, []);
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
-
-  useEffect(() => {
-    if (isMounted) {
-      fetchFeaturedDestinations();
-    }
-  }, [fetchFeaturedDestinations, isMounted]);
 
   return (
     <>
@@ -86,7 +55,7 @@ export default function Home() {
                     Descubre más sobre nosotros
                   </Link>
                   <Link href="/contact" className="contact-btn">
-                    Contact Us
+                    Contáctenos
                   </Link>
                 </div>
               </div>
@@ -116,28 +85,36 @@ export default function Home() {
                 Descubre algunos de nuestros destinos más populares de nuestro
                 país
               </p>
-
-              {(!isMounted || loading) && (
-                <div className="carousel-loading">
-                  <p>Cargando destinos...</p>
-                </div>
-              )}
-
-              {!loading && error && (
-                <div className="carousel-error">
-                  <p>Error al cargar destinos: {error}</p>
-                </div>
-              )}
-
-              {!loading && !error && featuredDestinations.length > 0 && (
-                <CarouselComponent slides={featuredDestinations} />
-              )}
-
-              {!loading && !error && featuredDestinations.length === 0 && (
-                <div className="no-destinations">
-                  <p>No hay destinos destacados disponibles</p>
-                </div>
-              )}
+              <CarouselComponent
+                slides={[
+                  {
+                    image: "/images/torres.jpg",
+                    icon: "/images/logo.png",
+                    title: "Torres del Paine",
+                    description:
+                      "Explora los majestuosos picos y glaciares de la Patagonia",
+                  },
+                  {
+                    image: "/images/desierto.jpg",
+                    icon: "/images/logo.png",
+                    title: "Desierto de Atacama",
+                    description:
+                      "Descubre el desierto más árido del mundo y sus cielos estrellados",
+                  },
+                  {
+                    image: "/images/valparaiso.jpg",
+                    icon: "/images/logo.png",
+                    title: "Valparaíso",
+                    description: "Descubre los misterios de las estatuas Moai",
+                  },
+                  {
+                    image: "/images/viñedos.jpg",
+                    icon: "/images/logo.png",
+                    title: "Tour Viñedos",
+                    description: "Degusta vinos de clase mundial en viñedos pintorescos",
+                  },
+                ]}
+              />
               <Link href="/destinations" className="learn-more-btn">
                 Descubre más
               </Link>
@@ -147,91 +124,21 @@ export default function Home() {
 
         <AnimatedSection className="why-choose-us-business">
           <div className="container">
-            <div className="section-header">
-              <h2>¿Por qué elegirnos?</h2>
-              <div className="section-underline"></div>
-              <p className="section-subtitle">
-                Descubre las razones por las que somos la mejor opción para
-                explorar Chile con un servicio profesional y personalizado.
-              </p>
-            </div>
-
-            <div className="business-features-grid">
-              <div className="business-feature">
-                <div className="business-feature-content">
-                  <div className="business-feature-icon">
-                    <Image
-                      src="/images/service-icon.svg"
-                      alt="Servicio Premium"
-                      width={64}
-                      height={64}
-                      className="icon-image"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = "none";
-                      }}
-                    />
-                  </div>
-                  <div className="business-feature-text">
-                    <h3>Servicio Premium</h3>
-                    <p>
-                      Ofrecemos una experiencia de viaje de alta calidad con
-                      atención personalizada y cuidado en cada detalle para
-                      superar sus expectativas.
-                    </p>
-                  </div>
+            <h2>¿Por qué elegirnos?</h2>
+            <div className="features-grid">
+              <div className="feature">
+                <div className="feature-icon">
+                  <FontAwesomeIcon icon={faMapLocationDot} className="fa-icon" />
                 </div>
               </div>
-
-              <div className="business-feature">
-                <div className="business-feature-content">
-                  <div className="business-feature-icon">
-                    <Image
-                      src="/images/destination-icon.svg"
-                      alt="Destinos Exclusivos"
-                      width={64}
-                      height={64}
-                      className="icon-image"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = "none";
-                      }}
-                    />
-                  </div>
-                  <div className="business-feature-text">
-                    <h3>Destinos Exclusivos</h3>
-                    <p>
-                      Acceda a lugares únicos y experiencias exclusivas
-                      cuidadosamente seleccionadas para crear recuerdos
-                      inolvidables.
-                    </p>
-                  </div>
+              <div className="feature">
+                <div className="feature-icon">
+                  <FontAwesomeIcon icon={faUserGear} className="fa-icon" />
                 </div>
               </div>
-
-              <div className="business-feature">
-                <div className="business-feature-content">
-                  <div className="business-feature-icon">
-                    <Image
-                      src="/images/sustainability-icon.svg"
-                      alt="Compromiso Sustentable"
-                      width={64}
-                      height={64}
-                      className="icon-image"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = "none";
-                      }}
-                    />
-                  </div>
-                  <div className="business-feature-text">
-                    <h3>Compromiso Sustentable</h3>
-                    <p>
-                      Nuestras operaciones están diseñadas para minimizar el
-                      impacto ambiental y contribuir positivamente a las
-                      comunidades locales.
-                    </p>
-                  </div>
+              <div className="feature">
+                <div className="feature-icon">
+                  <FontAwesomeIcon icon={faLeaf} className="fa-icon" />
                 </div>
               </div>
             </div>

@@ -88,10 +88,10 @@ const Navbar: React.FC = () => {
         </button>
 
         <ul className={`navLinks ${isMenuOpen ? "active" : ""}`}>
-          <NavLink href="/" label="Home" onClick={closeMenu} />
-          <NavLink href="/about" label="About" onClick={closeMenu} />
-          <NavLink href="/services" label="Services" onClick={closeMenu} />
-          <NavLink href="/contact" label="Contact" onClick={closeMenu} />
+          <NavLink href="/" label="Inicio" onClick={closeMenu} />
+          <NavLink href="/about" label="Acerca de" onClick={closeMenu} />
+          <NavLink href="/services" label="Servicios" onClick={closeMenu} />
+          <NavLink href="/contact" label="Contacto" onClick={closeMenu} />
         </ul>
       </nav>
 

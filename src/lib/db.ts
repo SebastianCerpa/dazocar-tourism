@@ -1,5 +1,13 @@
 import { PrismaClient } from '@prisma/client';
 
+// Validate environment variables
+if (!process.env.DATABASE_URL) {
+  throw new Error(
+    'DATABASE_URL environment variable is not defined. ' +
+    'Please create a .env file with DATABASE_URL or set it in your environment.'
+  );
+}
+
 // PrismaClient is attached to the `global` object in development to prevent
 // exhausting your database connection limit.
 // Learn more: https://pris.ly/d/help/next-js-best-practices
